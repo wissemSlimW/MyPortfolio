@@ -1,0 +1,1 @@
+export { SkillHexaCard } from './SkillHexaCard'

@@ -1,0 +1,1 @@
+export { HexaGateBg } from "./HexaGateBg";
