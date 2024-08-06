@@ -1,8 +1,6 @@
 import { Button, Grid } from "@mui/material";
-import { useContext } from "react";
 import { useTheme } from "react-jss";
 import { useNavigate } from "react-router";
-import { AppContext } from "../../Context";
 import { useOnScreen } from "../../Hooks";
 import { useGlobalStyles } from "../../Styles/global.style";
 import { joinStyleClasses } from "../../Utils";
@@ -15,7 +13,6 @@ export const ProjectCard = ({
   card: Project;
   index: number;
 }) => {
-  const context = useContext(AppContext);
   const navigate = useNavigate();
 
   const { onScreen, ref } = useOnScreen();

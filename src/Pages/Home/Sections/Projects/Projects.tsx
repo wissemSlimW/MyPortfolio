@@ -1,5 +1,5 @@
 import { Grid } from "@mui/material";
-import { Fragment, useContext, useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { useTheme } from "react-jss";
 import { ProjectCard, Slider } from "../../../../Components";
 import { AppContext } from "../../../../Context";

@@ -1,10 +1,10 @@
-import { useTheme } from "react-jss";
-import { useColorsMenuStyles } from "./ColorsMenu.style";
-import { themeColors } from "../../Styles/colors";
 import { Grid, IconButton } from "@mui/material";
-import { PaintBoard, PaintBoardFull } from "../../Assets/Svg";
 import { useState } from "react";
+import { useTheme } from "react-jss";
+import { PaintBoard } from "../../Assets/Svg";
+import { themeColors } from "../../Styles/colors";
 import { joinStyleClasses } from "../../Utils";
+import { useColorsMenuStyles } from "./ColorsMenu.style";
 
 export const ColorsMenu = ({
   onClick,

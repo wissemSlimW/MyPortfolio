@@ -76,6 +76,7 @@ export const projectImages: Record<
     ],
   },
   jupiter: {
+    main: "/projects/foodDelivery/jupiter1.png",//TO DO
     small: [
       "/projects/jupiter/jupiter1-small.png",
       "/projects/jupiter/jupiter2-small.png",
@@ -94,6 +95,8 @@ export const projectImages: Record<
     ],
   },
   omegup: {
+    main: "/projects/foodDelivery/omegup1.png",//TO DO
+
     small: [
       "/projects/omegup/omegup1-small.png",
       "/projects/omegup/omegup2-small.png",
@@ -118,6 +121,8 @@ export const projectImages: Record<
     ],
   },
   school: {
+    main: "/projects/foodDelivery/school1.png",//TO DO
+
     small: [
       "/projects/school/school1-small.png",
       "/projects/school/school2-small.png",
@@ -167,7 +172,7 @@ export const projectImages: Record<
     ],
   },
   taskManager: {
-    main:"/projects/taskmanager/main.png",
+    main: "/projects/taskmanager/main.png",
     small: [
       "/projects/taskmanager/taskmanager1-small.jfif",
       "/projects/taskmanager/taskmanager2-small.jfif",
@@ -213,6 +218,8 @@ export const projectImages: Record<
     ],
   },
   dsf: {
+    main: "/projects/foodDelivery/dsf1.png",//TO DO
+
     small: [
       "/projects/dsf/dsf1-small.png",
       "/projects/dsf/dsf2-small.png",

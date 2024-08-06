@@ -1,11 +1,10 @@
 import { Grid } from "@mui/material";
 import { useTheme } from "react-jss";
+import { useLocation } from "react-router";
 import { PROJECT_CARDS, SKILL_CARDS } from "../../Assets/data";
 import { useHomeStyle } from "./Home.style";
 import { About, Contact, Projects, Skills } from "./Sections";
 import { Main } from "./Sections/Main";
-import { useLocation } from "react-router";
-import { useEffect, useRef } from "react";
 
 export const Home = () => {
   const { hash } = useLocation();
