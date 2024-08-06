@@ -21,6 +21,7 @@ export const SkillHexaCard = ({
         onScreen ? classes.cardAnimation : ""
       )}
       ref={ref}
+      style={{ animationDuration: `${0.5 + index * 0.1}s` }}
     >
       <Grid component="span" className={classes.card}></Grid>
       <Grid className={classes.subCard}>

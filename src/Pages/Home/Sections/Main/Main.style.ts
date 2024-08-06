@@ -1,6 +1,9 @@
 import { createUseStyles } from "react-jss";
 
 export const useMainStyle = createUseStyles((theme: AppTheme) => ({
+  blockContainer: {
+    padding: 20,
+  },
   imgContainer: {
     display: "flex",
     transform: "translateY(50px)",

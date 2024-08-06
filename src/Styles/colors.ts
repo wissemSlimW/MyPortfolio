@@ -1,7 +1,7 @@
 export const themeColors: ThemeColors = {
   purple: 270,
   blue: 230,
-  green: 130,
+  green: 125,
   // orange: 24,
   // pink: 307,
   red: 340,

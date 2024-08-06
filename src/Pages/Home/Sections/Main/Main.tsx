@@ -53,18 +53,23 @@ export const Main = () => {
           item
           xs={12}
           md={6}
-          sx={{ justifyContent: { xs: "center", md: "end" } }}
           className={classes.imgContainer}
           container
         >
-          <Grid className={classes.imageContainer}>
-            <Grid
-              component={"img"}
-              className={classes.imgStyle}
-              src={profileImg}
-              alt="profile image"
-            ></Grid>
-            <Grid className={classes.bgImg}></Grid>
+          <Grid
+            container
+            sx={{ justifyContent: { xs: "center", md: "end" } }}
+            className={classes.blockContainer}
+          >
+            <Grid className={classes.imageContainer}>
+              <Grid
+                component={"img"}
+                className={classes.imgStyle}
+                src={profileImg}
+                alt="profile image"
+              ></Grid>
+              <Grid className={classes.bgImg}></Grid>
+            </Grid>
           </Grid>
         </Grid>
         <Grid
@@ -120,13 +125,27 @@ export const Main = () => {
               className={classes.linkContainer}
               sx={{ justifyContent: { xs: "center", md: "start" } }}
             >
-              <Grid className={classes.link} component={"a"} href={links.github} target="_blank">
+              <Grid
+                className={classes.link}
+                component={"a"}
+                href={links.github}
+                target="_blank"
+              >
                 <GithubCircle className={classes.linkIcon} />
               </Grid>
-              <Grid className={classes.link} component={"a"} href={links.linkedin} target="_blank">
+              <Grid
+                className={classes.link}
+                component={"a"}
+                href={links.linkedin}
+                target="_blank"
+              >
                 <LinkedinCircle className={classes.linkIcon} />
               </Grid>
-              <Grid  className={classes.link}component={"a"} href={`mailto:${links.email}`}>
+              <Grid
+                className={classes.link}
+                component={"a"}
+                href={`mailto:${links.email}`}
+              >
                 <EmailCircle className={classes.linkIcon} />
               </Grid>
             </Grid>

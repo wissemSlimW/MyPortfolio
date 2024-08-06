@@ -21,7 +21,7 @@ export const useTextInputStyles = createUseStyles((theme: AppTheme) => ({
   },
   TextInputContainerLight: {
     "&&&>div>div": {
-      backgroundColor: theme.colorWhite,
+      backgroundColor: theme.colorLight,
       borderRadius: 10,
     },
     "&&&>div>div>fieldset": {
@@ -37,7 +37,7 @@ export const useTextInputStyles = createUseStyles((theme: AppTheme) => ({
   },
   labelStyleLight: {
     "&&&": {
-      backgroundColor: theme.colorWhite,
+      backgroundColor: theme.colorLight,
       paddingInline: 15,
       borderRadius: 10,
       fontWeight: 500,

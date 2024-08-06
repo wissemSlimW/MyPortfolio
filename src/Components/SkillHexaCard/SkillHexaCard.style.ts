@@ -102,9 +102,9 @@ export const useSkillHexaCardStyles = createUseStyles({
     color: ({ theme }: { theme: AppTheme }) => theme.colorDark,
   },
   cardAnimation: {
-    transform: "translateX(-50px)",
+    transform: "translateX(100px)",
     filter: "blur(15px)",
-    animation: "$vibrate .5s linear 1 forwards",
+    animation: "$vibrate 0.5s linear  forwards",
   },
   "@keyframes vibrate": {
     "100%": { transform: "translateX(0px)", filter: "blur(0px)" },

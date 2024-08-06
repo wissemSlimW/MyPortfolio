@@ -5,7 +5,7 @@ export const useContactStyle = createUseStyles((theme: AppTheme) => ({
     padding: 20,
     borderRadius: 35,
     backgroundColor: theme.colorPrimary,
-    overflow: "hidden",
+    aspectRatio: 2,
   },
   contentBlock: { background: theme.colorPrimary },
   detailsBlock: { paddingBlock: 30 },
@@ -23,7 +23,7 @@ export const useContactStyle = createUseStyles((theme: AppTheme) => ({
     backgroundColor: theme.colorLight,
   },
   contactFieldCardLight: {
-    backgroundColor: theme.colorWhite,
+    backgroundColor: theme.colorLight,
   },
   submitBtncontainer: {
     display: "flex",
@@ -63,24 +63,27 @@ export const useContactStyle = createUseStyles((theme: AppTheme) => ({
   },
   contactSubTitle: {
     color: theme.colorBlack,
-    fontSize: 18,
+    fontSize: 24,
     fontWeight: 700,
   },
   contactText: {
-    paddingBlock: 10,
+    paddingInline: 20,
+    paddingBlock: 30,
     paddingInlineEnd: 30,
     textAlign: "start",
-    color: theme.colorWhite,
+    color: theme.colorBlack,
     fontSize: 14,
+    fontWeight: 500,
   },
   contactEmailContainer: {
     display: "flex",
     gap: 5,
     alignItems: "center",
-    fontWeight:600,
-    color:theme.colorBlack,
+    fontWeight: 600,
+    color: theme.colorBlack,
     paddingBlockStart: 20,
     paddingBlockEnd: 20,
+    fontSize: 16,
   },
   sendIcon: {
     "&&& path": {
