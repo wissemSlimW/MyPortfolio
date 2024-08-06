@@ -4,7 +4,7 @@ export const themeColors: ThemeColors = {
   green: 130,
   // orange: 24,
   // pink: 307,
-  red: 360,
+  red: 340,
   yellow: 50,
 };
 export const lightness = {

@@ -1,5 +1,5 @@
 export const DEFAULT_VALUES: AppContextModel = {
-  themeColor: "blue",
+  themeColor: "green",
   mode: "LIGHT",
   mobileMenuHighlight: "main",
   showMenu: true,

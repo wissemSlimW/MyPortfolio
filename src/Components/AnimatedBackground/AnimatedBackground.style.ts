@@ -46,7 +46,7 @@ export const useAnimatedBackgroundStyles = createUseStyles({
       borderRadius: "50%",
     },
     "100%": {
-      transform: "translateY(-120vh) rotate(720deg)",
+      transform: "translateY(-120dvh) rotate(720deg)",
       opacity: 1,
       borderRadius: "50%",
     },

@@ -61,7 +61,7 @@ export const PROJECT_CARDS: Project[] = [
       "Naqdi transforms the landscape of loyalty reward programs, empowering merchants, employees, and administrators to efficiently manage, engage, and benefit from its innovative reward point withdrawal system.",
     ],
     id: "naqdiApp",
-    mainImage: projectImages.naqdiApp.original[1],
+    mainImage: projectImages.naqdiApp.main,
     technologies: [
       "reactJs",
       "materialUI",
@@ -86,7 +86,7 @@ export const PROJECT_CARDS: Project[] = [
       "Bevioo simplifies complex workflows, providing a centralized solution that enhances efficiency and transparency across interconnected internal services within these companies.",
     ],
     id: "bevioo",
-    mainImage: projectImages.bevioo.original[0],
+    mainImage: projectImages.bevioo.main,
     technologies: [
       "reactJs",
       "materialUI",
@@ -128,7 +128,7 @@ export const PROJECT_CARDS: Project[] = [
       "ProjectTask Manager is a comprehensive and user-friendly application designed to streamline the management of large projects by facilitating the creation, assignment, and tracking of tasks among project members. This powerful tool enhances collaboration and ensures a smooth project progression through intuitive features and advanced functionalities.",
     ],
     id: "taskManager",
-    mainImage: projectImages.taskManager.original[0],
+    mainImage: projectImages.taskManager.main,
     technologies: [
       "typeScript",
       "reactJs",
@@ -179,7 +179,7 @@ export const PROJECT_CARDS: Project[] = [
       "This sophisticated platform offers an interactive and dynamic space, fostering efficient interactions between customers and service providers. It's not just about buying; it's about creating an immersive experience that simplifies the entire process of shopping for food and groceries online, redefining convenience and reliability in E-Commerce.",
     ],
     id: "fooddelivery",
-    mainImage: projectImages.fooddelivery.original[7],
+    mainImage: projectImages.fooddelivery.main,
     technologies: [
       "reactJs",
       "typeScript",
@@ -203,7 +203,7 @@ export const PROJECT_CARDS: Project[] = [
       "The Agricultural Investment Promotion Agency (APIA) is embarking on a transformative initiative in collaboration with the Agriculture Ministry, introducing an ERP-web application designed to meticulously manage internal services, projects, and entrepreneurs within its expansive incubator network. This innovative project places particular emphasis on efficiently overseeing diverse incubators affiliated with the agricultural promotion and investment agency. Each incubator is characterized by its unique location, comprehensive lists of adherent entrepreneurs, and a curated portfolio of programs aimed at fostering agricultural innovation. The ERP-web application facilitates seamless navigation through the intricate web of APIA's incubator ecosystem, providing a centralized platform to register and monitor entrepreneurs, their respective projects, and engagement in specialized programs. By implementing this comprehensive solution, APIA seeks to enhance collaboration, streamline project management, and empower entrepreneurs as they contribute to the growth and sustainability of the agricultural sector.",
     ],
     id: "apia",
-    mainImage: projectImages.apia.original[0],
+    mainImage: projectImages.apia.main,
     technologies: [
       "reactJs",
       "typeScript",

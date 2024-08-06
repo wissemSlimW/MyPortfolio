@@ -17,8 +17,7 @@ export const useFloatingCubeStyle = createUseStyles({
     width: 150,
     transformStyle: "preserve-3d",
     transform: "rotateX(-30deg) rotateY(-15deg)",
-    // animation: "$rotate 4s linear infinite",
-
+    animation: "$rotate 4s linear infinite",
     "&>:nth-child(1)": {
       position: "absolute",
       insetInlineStart: 0,

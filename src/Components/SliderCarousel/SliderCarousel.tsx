@@ -40,7 +40,7 @@ export const SliderCarousel = ({ cards }: { cards: { original: string[], small: 
                 }deg)) translateZ(${(500 * cards.original.length) / (2 * Math.PI)}px)`,
             }}
           ><Grid className={joinStyleClasses(!loaded?.[key] ? classes.loadingImgAnimation : '')} style={!loaded?.[key] ? { backgroundImage: `url(${cards.small[key]})` } : {}}>
-              <img src={img} loading="lazy" onLoad={() => setLoaded(prev => ({ ...prev, [key]: true }))} />
+              <img src={img} alt="project image" loading="lazy" onLoad={() => setLoaded(prev => ({ ...prev, [key]: true }))} />
             </Grid>
           </Grid>
         ))}

@@ -9,10 +9,10 @@ import {
   LightMode,
   Message,
   Person,
-} from "../../Assets/Svg";
-import { AppContext } from "../../Context";
-import { themeColors } from "../../Styles/colors";
-import { joinStyleClasses } from "../../Utils";
+} from "../../../Assets/Svg";
+import { AppContext } from "../../../Context";
+import { themeColors } from "../../../Styles/colors";
+import { joinStyleClasses } from "../../../Utils";
 import { useMobileHeaderStyles } from "./MobileHeader.style";
 
 export const MobileHeader = ({ className }: { className?: string }) => {
@@ -89,6 +89,7 @@ export const MobileHeader = ({ className }: { className?: string }) => {
             </Grid>
           ))}
           <Grid
+          
             className={classes.indicator}
             style={{
               insetInlineStart:

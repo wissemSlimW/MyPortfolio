@@ -1,77 +1,118 @@
 import { createUseStyles } from "react-jss";
 
-export const useContactStyle = createUseStyles({
-    contactCard: {
-        padding: 30,
-        paddingBlockEnd: 100,
-        borderRadius: 20,
-        backgroundColor: ({ theme }: { theme: AppTheme }) => theme.colorWhite
+export const useContactStyle = createUseStyles((theme: AppTheme) => ({
+  contactCard: {
+    padding: 20,
+    borderRadius: 35,
+    backgroundColor: theme.colorPrimary,
+    overflow: "hidden",
+  },
+  contentBlock: { background: theme.colorPrimary },
+  detailsBlock: { paddingBlock: 30 },
+  contactFieldCard: {
+    borderRadius: 15,
+    paddingBlock: 30,
+    paddingInline: 20,
+    display: "flex",
+    flexDirection: "column",
+    gap: 15,
+    boxShadow: ({ theme }: { theme: AppTheme }) =>
+      `0px 0px 9px ${theme.colorPrimary}`,
+  },
+  contactFieldCardDark: {
+    backgroundColor: theme.colorLight,
+  },
+  contactFieldCardLight: {
+    backgroundColor: theme.colorWhite,
+  },
+  submitBtncontainer: {
+    display: "flex",
+    justifyContent: "end",
+  },
+  submitBtn: {
+    "&&&": {
+      cursor: "pointer",
+      borderRadius: 20,
+      paddingBlock: 10,
+      paddingInline: 30,
+      height: 44,
+      fontSize: 16,
+      fontWeight: 700,
+      textTransform: "none",
     },
-    contactFieldCard: {
-        borderRadius: 20,
-        padding: 20,
-        boxShadow: ({ theme }: { theme: AppTheme }) => `0px 0px 9px ${theme.colorPrimary}`
+  },
+  submitBtnDark: {
+    "&&&": {
+      backgroundColor: theme.colorPrimary,
+      color: theme.colorWhite,
+      boxShadow: ({ theme }: { theme: AppTheme }) =>
+        `0px 2px 10px 2px ${theme.colorPrimary}`,
     },
-    contactFieldCardDark: {
-        backgroundColor: ({ theme }: { theme: AppTheme }) => theme.colorLight,
+  },
+  submitBtnLight: {
+    "&&&": {
+      backgroundColor: theme.colorPrimary,
+      color: theme.colorWhite,
+      boxShadow: ({ theme }: { theme: AppTheme }) =>
+        `0px 0px 8px 0px ${theme.colorPrimaryExtraLight}`,
     },
-    contactFieldCardLight: {
-        backgroundColor: ({ theme }: { theme: AppTheme }) => theme.colorPrimary,
+  },
+  title: { color: theme.colorWhite, fontSize: 44 },
+  contactColor: {
+    color: theme.colorDark,
+  },
+  contactSubTitle: {
+    color: theme.colorBlack,
+    fontSize: 18,
+    fontWeight: 700,
+  },
+  contactText: {
+    paddingBlock: 10,
+    paddingInlineEnd: 30,
+    textAlign: "start",
+    color: theme.colorWhite,
+    fontSize: 14,
+  },
+  contactEmailContainer: {
+    display: "flex",
+    gap: 5,
+    alignItems: "center",
+    fontWeight:600,
+    color:theme.colorBlack,
+    paddingBlockStart: 20,
+    paddingBlockEnd: 20,
+  },
+  sendIcon: {
+    "&&& path": {
+      fill: theme.colorBlack,
     },
-    submitBtncontainer: {
-        display: 'flex',
-        justifyContent: 'end'
+  },
+  linkIcon: {
+    height: 44,
+    width: 44,
+    borderRadius: "50%",
+    color: theme.colorWhite,
+    "&:hover": { height: 54, width: 54 },
+  },
+  messageInput: {
+    width: "100%",
+    flex: 1,
+    display: "flex",
+    flexDirection: "column",
+    "&>div": {
+      flex: 1,
+      display: "flex",
+      flexDirection: "column",
+      "&>div": {
+        flex: 1,
+        display: "flex",
+        flexDirection: "column",
+        "&>div": {
+          flex: 1,
+          display: "flex",
+          flexDirection: "column",
+        },
+      },
     },
-    submitBtn: {
-        "&&&": {
-            cursor: "pointer",
-            borderRadius: 20,
-            paddingBlock: 10,
-            paddingInline: 30,
-            height: 44,
-            fontSize: 16,
-            fontWeight: 700,
-            textTransform: 'none',
-        }
-    },
-    submitBtnDark: {
-        "&&&": {
-            backgroundColor: ({ theme }: { theme: AppTheme }) => theme.colorPrimary,
-            color: ({ theme }: { theme: AppTheme }) => theme.colorWhite,
-            boxShadow: ({ theme }: { theme: AppTheme }) => `0px 2px 10px 2px ${theme.colorPrimary}`,
-        }
-    },
-    submitBtnLight: {
-        "&&&": {
-            backgroundColor: ({ theme }: { theme: AppTheme }) => theme.colorWhite,
-            color: ({ theme }: { theme: AppTheme }) => theme.colorPrimary,
-            boxShadow: ({ theme }: { theme: AppTheme }) => `0px 0px 8px 0px ${theme.colorBlack}`,
-        }
-    },
-    contactColor: {
-        color: ({ theme }: { theme: AppTheme }) => theme.colorDark,
-    },
-    contactSubTitle: {
-        color: ({ theme }: { theme: AppTheme }) => theme.colorBlack,
-        fontSize: 18
-    },
-    contactText: {
-        paddingBlock: 10,
-        paddingInlineEnd: 30,
-        textAlign: 'justify',
-        color: ({ theme }: { theme: AppTheme }) => theme.colorDark,
-        fontSize: 14
-    },
-    contactEmailContainer: {
-        display: 'flex',
-        gap: 5,
-        alignItems: 'center',
-        paddingBlockStart: 50,
-        paddingBlockEnd: 20
-    },
-    sendIcon: {
-        '&&& path': {
-            fill: ({ theme }: { theme: AppTheme }) => theme.colorBlack
-        }
-    }
-});
+  },
+}));

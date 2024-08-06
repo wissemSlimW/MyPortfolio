@@ -1,22 +1,32 @@
 import { Grid } from "@mui/material";
 import { useTheme } from "react-jss";
 import { useSkillHexaCardStyles } from "./SkillHexaCard.style";
+import { useOnScreen } from "../../Hooks";
+import { joinStyleClasses } from "../../Utils";
 
 export const SkillHexaCard = ({
   card,
+  index,
 }: {
   card: Skill;
-
-  className?: string;
+  index: number;
 }) => {
+  const { onScreen, ref } = useOnScreen();
   const theme = useTheme<AppTheme>();
   const classes = useSkillHexaCardStyles({ theme });
   return (
-    <Grid className={classes.container}>
+    <Grid
+      className={joinStyleClasses(
+        classes.container,
+        onScreen ? classes.cardAnimation : ""
+      )}
+      ref={ref}
+    >
       <Grid component="span" className={classes.card}></Grid>
       <Grid className={classes.subCard}>
         <Grid
           component="img"
+          alt="skill logo"
           src={card.logo}
           className={classes.skillCarImage}
         />

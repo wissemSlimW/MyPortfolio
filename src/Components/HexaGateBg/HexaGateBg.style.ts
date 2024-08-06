@@ -3,7 +3,7 @@ import { createUseStyles } from "react-jss";
 export const useHexaGateBgStyles = createUseStyles({
   HexaGateBgStyle: {
     width: "100vw",
-    height: "100vh",
+    height: "100dvh",
     overflow: "hidden",
     justifyContent: "center",
     alignItems: "center",
@@ -19,23 +19,25 @@ export const useHexaGateBgStyles = createUseStyles({
         insetBlock: "0%",
         position: "absolute",
         // borderRadius:'50%',
-        border: ({ theme }: { theme: AppTheme }) =>
-          `40px solid ${theme.colorPrimary}`,
+        borderInline: ({ theme }: { theme: AppTheme }) =>
+          `1px solid ${theme.colorPrimary}`,
         boxShadow: ({ theme }: { theme: AppTheme }) =>
           `inset 0px 20px 20px 20px ${theme.colorPrimary}`,
       },
       position: "relative",
-      insetInlineStart: "calc(-2.88vh - 4px)",
+      insetInlineStart: "calc(-2.88dvh + 20px)",
       width: "120vw",
-      height: "120vh",
+      height: "120dvh",
       display: "flex",
       flexDirection: "column",
-      columnGap: 4,
-      rowGap: "4.2vh",
+      columnGap: "5.3dvh",
+      backgroundColor: ({ theme }: { theme: AppTheme }) =>
+        theme.colorPrimaryExtraLight,
+      rowGap: "3.2dvh",
       flexWrap: "wrap",
       "&>span": {
-        width: "10vh",
-        height: "5.76vh",
+        width: "10dvh",
+        height: "5.76dvh",
         position: "relative",
         backgroundColor: ({ theme }: { theme: AppTheme }) => theme.colorLight,
         "&::before": {
@@ -43,37 +45,39 @@ export const useHexaGateBgStyles = createUseStyles({
           position: "absolute",
           width: 0,
           height: 0,
-          insetInlineStart: "0vh",
-          insetBlockEnd: "5.76vh",
+          insetInlineStart: "0dvh",
+          insetBlockEnd: "5.76dvh",
           borderBlockEnd: ({ theme }: { theme: AppTheme }) =>
-            `2.88vh solid ${theme.colorLight}`,
-          borderInline: `5vh solid transparent`,
+            `2.88dvh solid ${theme.colorLight}`,
+          borderInline: `5dvh solid transparent`,
         },
         "&::after": {
           content: '""',
           position: "absolute",
           width: 0,
           height: 0,
-          insetInlineStart: "0vh",
-          insetBlockStart: "5.76vh",
+          insetInlineStart: "0dvh",
+          insetBlockStart: "5.76dvh",
           borderBlockStart: ({ theme }: { theme: AppTheme }) =>
-            `2.88vh solid ${theme.colorLight}`,
-          borderInline: `5vh solid transparent`,
+            `2.88dvh solid ${theme.colorLight}`,
+          borderInline: `5dvh solid transparent`,
         },
       },
       "&>:nth-child(even)": {
-        transform: "translateX(5vh)",
+        transform: "translateX(5dvh)",
       },
     },
   },
   "@keyframes spread": {
     "0%": {
       insetInline: "50%",
-      opacity: 0.8
+      opacity: 0.8,
+      borderWidth: 0,
     },
+    "15%": { borderWidth: 40 },
     "100%": {
       insetInline: "-20%",
-      opacity: 1
+      opacity: 1,
     },
   },
 });

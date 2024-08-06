@@ -1,13 +1,11 @@
 import { Grid } from "@mui/material";
-import { useHomeStyle } from "../../Home.style";
-import { createRef } from "react";
+import { useTheme } from "react-jss";
 import { useOnScreen } from "../../../../Hooks";
 import { useGlobalStyles } from "../../../../Styles/global.style";
-import { useTheme } from "react-jss";
+import { useHomeStyle } from "../../Home.style";
 
 export const Experience = () => {
-  const ref = createRef<HTMLElement>();
-  const onScreen = useOnScreen(ref);
+  const { ref, onScreen } = useOnScreen();
   const theme = useTheme<AppTheme>();
   const classes = {
     ...useHomeStyle({ theme }),

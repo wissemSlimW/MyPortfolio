@@ -1,31 +1,26 @@
 import { createUseStyles } from "react-jss";
 
-export const useHomeStyle = createUseStyles({
+export const useHomeStyle = createUseStyles((theme: AppTheme) => ({
   homeStyle: {
     scrollBehavior: "smooth",
     display: "flex",
     flexDirection: "column",
   },
   section: {
-    paddingBlock: 70,
+    paddingBlockStart: 70,
+    paddingBlockEnd: 120,
     display: "flex",
-    flexDirection: 'column',
+    flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    minHeight: "calc( 100vh + 20px )",
-    color: ({ theme }: { theme: AppTheme }) => theme?.colorBlack,
+    minHeight: "100dvh",
+    color: theme?.colorBlack,
   },
   sectionTitle: {
     fontSize: 44,
-    // paddingBlockEnd: 50,
-    color: ({ theme }: { theme: AppTheme }) => theme.colorPrimary,
+    color: theme.colorPrimary,
   },
   sectionBg: {
-    "&:nth-child(even)": {
-      backgroundColor: ({ theme }: { theme: AppTheme }) => theme?.colorLight,
-    },
-    "&:nth-child(odd)": {
-      backgroundColor: ({ theme }: { theme: AppTheme }) => theme?.colorWhite,
-    },
+    backgroundColor: theme?.colorLight,
   },
-});
+}));

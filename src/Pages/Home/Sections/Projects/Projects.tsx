@@ -1,7 +1,7 @@
 import { Grid } from "@mui/material";
-import { Fragment, useContext, useEffect, useRef } from "react";
+import { Fragment, useContext, useEffect } from "react";
 import { useTheme } from "react-jss";
-import { ProjectCard } from "../../../../Components";
+import { ProjectCard, Slider } from "../../../../Components";
 import { AppContext } from "../../../../Context";
 import { useOnScreen } from "../../../../Hooks";
 import { useGlobalStyles } from "../../../../Styles/global.style";
@@ -10,9 +10,8 @@ import { useHomeStyle } from "../../Home.style";
 import { useProjectsStyle } from "./Projects.style";
 
 export const Projects = ({ cards }: { cards: Project[] }) => {
-  const ref = useRef<HTMLElement>(null);
   const context = useContext(AppContext);
-  const onScreen = useOnScreen(ref);
+  const { onScreen, ref } = useOnScreen();
   useEffect(() => {
     onScreen && context.setMobileMenuHighlight!("projects");
   }, [onScreen]);
@@ -28,30 +27,38 @@ export const Projects = ({ cards }: { cards: Project[] }) => {
       component="section"
       id="projects"
       className={joinStyleClasses(
-        classes.section,
+        context.mode === "LIGHT" ? "" : classes.section,
         context.mode === "LIGHT" ? classes.sectionBg : ""
       )}
       {...{ ref }}
     >
-      <Grid component={'h1'} className={classes.sectionTitle}>Projects</Grid>
-      <Grid container justifyContent={"center"}>
-        <Grid container item xs={11} sm={10}
-          className={classes.projectCardsContainer}
-        >
-          {cards.map((card, i) => (
-            <Fragment key={i}>
-              {
+      {context.mode === "LIGHT" ? (
+        <Slider list={cards} />
+      ) : (
+        <>
+          <Grid component={"h1"} className={classes.sectionTitle}>
+            Projects
+          </Grid>
+          <Grid container justifyContent={"center"}>
+            <Grid
+              item
+              xs={11}
+              sm={10}
+              className={classes.projectCardsContainer}
+            >
+              {cards.map((card, i) => (
                 <ProjectCard
+                  key={i}
                   {...{
                     card,
                     index: i,
                   }}
                 />
-              }
-            </Fragment>
-          ))}
-        </Grid>
-      </Grid>
+              ))}
+            </Grid>
+          </Grid>
+        </>
+      )}
     </Grid>
   );
 };

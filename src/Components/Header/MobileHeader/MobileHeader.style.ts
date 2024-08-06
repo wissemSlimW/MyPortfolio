@@ -1,17 +1,16 @@
 import { createUseStyles } from "react-jss";
 
-export const useMobileHeaderStyles = createUseStyles({
+export const useMobileHeaderStyles = createUseStyles((theme: AppTheme) => ({
   headerContainer: {
-    boxShadow: ({ theme }: { theme: AppTheme }) =>
-      `0px 0px 5px ${theme.colorPrimary}`,
+    boxShadow: `0px 0px 5px ${theme.colorPrimary}`,
     position: "absolute",
-    insetBlockStart: "calc(100vh - 110px )",
+    insetBlockStart: "calc(100dvh - 110px )",
     justifyContent: "center",
-    insetInline: "calc(50vw - 175px )",
+    insetInline: "50vw",
     borderRadius: 40,
   },
   navStyle: {
-    backgroundColor: ({ theme }: { theme: AppTheme }) => theme.colorLight,
+    backgroundColor: theme.colorLight,
     width: 350,
     position: "relative",
     zIndex: 10,
@@ -19,7 +18,7 @@ export const useMobileHeaderStyles = createUseStyles({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    flexDirection: 'column',
+    flexDirection: "column",
     borderRadius: 40,
   },
   listStyle: {
@@ -45,6 +44,7 @@ export const useMobileHeaderStyles = createUseStyles({
     flexDirection: "column",
     textAlign: "center",
     fontWeight: 500,
+    color: theme.colorBlack,
   },
   iconStyle: {
     position: "relative",
@@ -55,7 +55,7 @@ export const useMobileHeaderStyles = createUseStyles({
     fontSize: "1.5rem",
     textAlign: "center",
     transition: "0.5s",
-    fill: ({ theme }: { theme: AppTheme }) => theme.colorBlack,
+    fill: theme.colorBlack,
   },
   active: {
     "&>a>svg": {
@@ -72,33 +72,32 @@ export const useMobileHeaderStyles = createUseStyles({
     letterSpacing: "0.05em",
     opacity: "0",
     transform: "translateY(20px)",
-    color: ({ theme }: { theme: AppTheme }) => theme.colorBlack,
+    color: theme.colorBlack,
   },
   indicator: {
-    boxShadow: ({ theme }: { theme: AppTheme }) =>
-      `0px -1px ${theme.colorPrimary}`,
+    boxShadow: `0px -1px ${theme.colorPrimary}`,
     position: "absolute",
     height: 60,
     width: 60,
     listStyle: "none",
     insetBlockStart: -30,
     transition: "0.5s",
-    backgroundColor: ({ theme }: { theme: AppTheme }) => theme.colorPrimary,
+    backgroundColor: theme.colorPrimary,
     borderRadius: "50%",
-    border: ({ theme }: { theme: AppTheme }) => `6px solid ${theme.colorLight}`,
+    border: `6px solid ${theme.colorLight}`,
   },
   subBlock: {
-    height: 40,
+    height: 30,
     width: "75%",
-    background: ({ theme }: { theme: AppTheme }) => theme.colorLight,
-    boxShadow: ({ theme }: { theme: AppTheme }) => `0px 3px 5px ${theme.colorPrimary}`,
-    position: 'absolute',
-    insetBlock: '100%',
+    background: theme.colorLight,
+    boxShadow: `0px 3px 5px ${theme.colorPrimary}`,
+    position: "absolute",
+    insetBlock: "100%",
     borderEndEndRadius: 75,
     borderEndStartRadius: 75,
     paddingInline: 40,
     display: "flex",
-    justifyContent: 'space-between'
+    justifyContent: "space-between",
   },
   modeSwitcherButton: {
     paddingBlock: 13,
@@ -106,21 +105,21 @@ export const useMobileHeaderStyles = createUseStyles({
   },
   modeIcon: {
     "&&&>g> path": {
-      fill: ({ theme }: { theme: AppTheme }) => theme.colorBlack
-    }
+      fill: theme.colorBlack,
+    },
   },
   colorsContainer: {
     display: "flex",
     gap: 7,
-    alignItems: 'center'
+    alignItems: "center",
   },
   dot: {
     width: 17,
     aspectRatio: 1,
-    borderRadius: '50%',
-    cursor: 'pointer'
+    borderRadius: "50%",
+    cursor: "pointer",
   },
   selected: {
-    border: ({ theme }: { theme: AppTheme }) => `2px solid ${theme.colorBlack}`
-  }
-});
+    border: `2px solid ${theme.colorBlack}`,
+  },
+}));

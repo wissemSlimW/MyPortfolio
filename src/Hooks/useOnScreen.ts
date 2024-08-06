@@ -1,18 +1,13 @@
-import { useEffect, useMemo, useState } from "react";
+import { useState } from "react";
+import { useInView, } from "react-intersection-observer";
 
-export const useOnScreen = (ref: React.RefObject<HTMLElement>) => {
-  const [isOnScreen, setIsOnScreen] = useState<boolean>(false);
-  const observer = useMemo(
-    () =>
-      new IntersectionObserver(([entry]) => {
-        setIsOnScreen(entry.isIntersecting);
-      }),
-    []
-  );
-  useEffect(() => {
-    observer.observe(ref!.current as Element);
-    return () => observer.disconnect();
-  }, [ref, observer]);
+export const useOnScreen = () => {
+  const [onScreen, setOnScreen] = useState<boolean>(false);
 
-  return isOnScreen;
+  const { ref } = useInView({
+    onChange: (visible) => setOnScreen(visible),
+
+  });
+
+  return { onScreen, ref };
 };

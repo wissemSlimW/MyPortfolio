@@ -4,5 +4,6 @@ export { FloatingCube } from "./FloatingCube";
 export { HexaGateBg } from "./HexaGateBg";
 export { TextInput } from "./TextInput";
 export { SkillHexaCard } from "./SkillHexaCard";
-export { SliderCarousel } from './SliderCarousel'
-export {SkillCard} from './SkillCard'
+export { SliderCarousel } from "./SliderCarousel";
+export { SkillCard } from "./SkillCard";
+export { Slider } from "./Slider";

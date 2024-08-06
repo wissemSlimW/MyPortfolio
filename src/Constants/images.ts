@@ -18,11 +18,15 @@ export const skillsLogos: Record<SkillName, string> = {
   jira: "/skills/jira.png",
   redux: "/skills/redux.png",
   nextJs: "/skills/nextJs.png",
-  meteor: "/skills/meteorJs.png"
+  meteor: "/skills/meteorJs.png",
 };
 
-export const projectImages: Record<ProjectNames, { original: string[], small: string[] }> = {
+export const projectImages: Record<
+  ProjectNames,
+  { original: string[]; small: string[]; main: string }
+> = {
   apia: {
+    main: "/projects/apia/main.png",
     original: [
       "/projects/apia/apia1.png",
       "/projects/apia/apia2.png",
@@ -44,9 +48,10 @@ export const projectImages: Record<ProjectNames, { original: string[], small: st
       "/projects/apia/apia7-small.png",
       "/projects/apia/apia8-small.png",
       "/projects/apia/apia9-small.png",
-    ]
+    ],
   },
   fooddelivery: {
+    main: "/projects/foodDelivery/main.png",
     small: [
       "/projects/foodDelivery/foodDelivery1-small.png",
       "/projects/foodDelivery/foodDelivery2-small.png",
@@ -68,7 +73,7 @@ export const projectImages: Record<ProjectNames, { original: string[], small: st
       "/projects/foodDelivery/foodDelivery7.png",
       "/projects/foodDelivery/foodDelivery8.png",
       "/projects/foodDelivery/foodDelivery9.png",
-    ]
+    ],
   },
   jupiter: {
     small: [
@@ -86,7 +91,7 @@ export const projectImages: Record<ProjectNames, { original: string[], small: st
       "/projects/jupiter/jupiter4.png",
       "/projects/jupiter/jupiter5.png",
       "/projects/jupiter/jupiter6.png",
-    ]
+    ],
   },
   omegup: {
     small: [
@@ -110,7 +115,7 @@ export const projectImages: Record<ProjectNames, { original: string[], small: st
       "/projects/omegup/omegup7.png",
       "/projects/omegup/omegup8.png",
       "/projects/omegup/omegup9.png",
-    ]
+    ],
   },
   school: {
     small: [
@@ -134,9 +139,10 @@ export const projectImages: Record<ProjectNames, { original: string[], small: st
       "/projects/school/school7.png",
       "/projects/school/school8.png",
       "/projects/school/school9.png",
-    ]
+    ],
   },
   naqdiApp: {
+    main: "/projects/naqdiApp/main.png",
     small: [
       "/projects/naqdiApp/naqdiApp1-small.png",
       "/projects/naqdiApp/naqdiApp2-small.png",
@@ -158,9 +164,10 @@ export const projectImages: Record<ProjectNames, { original: string[], small: st
       "/projects/naqdiApp/naqdiApp7.png",
       "/projects/naqdiApp/naqdiApp8.png",
       "/projects/naqdiApp/naqdiApp9.png",
-    ]
+    ],
   },
   taskManager: {
+    main:"/projects/taskmanager/main.png",
     small: [
       "/projects/taskmanager/taskmanager1-small.jfif",
       "/projects/taskmanager/taskmanager2-small.jfif",
@@ -178,9 +185,10 @@ export const projectImages: Record<ProjectNames, { original: string[], small: st
       "/projects/taskmanager/taskmanager5.jfif",
       "/projects/taskmanager/taskmanager6.jfif",
       "/projects/taskmanager/taskmanager7.jfif",
-    ]
+    ],
   },
   bevioo: {
+    main: "/projects/bevioo/main.png",
     small: [
       "/projects/bevioo/bevioo1-small.png",
       "/projects/bevioo/bevioo2-small.png",
@@ -202,7 +210,7 @@ export const projectImages: Record<ProjectNames, { original: string[], small: st
       "/projects/bevioo/bevioo7.png",
       "/projects/bevioo/bevioo8.png",
       "/projects/bevioo/bevioo9.png",
-    ]
+    ],
   },
   dsf: {
     small: [
@@ -226,8 +234,8 @@ export const projectImages: Record<ProjectNames, { original: string[], small: st
       "/projects/dsf/dsf7.png",
       "/projects/dsf/dsf8.png",
       "/projects/dsf/dsf9.png",
-    ]
-  }
+    ],
+  },
 };
 
 export const profileImg = "/profileImg.png";
