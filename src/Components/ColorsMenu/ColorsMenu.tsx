@@ -30,7 +30,10 @@ export const ColorsMenu = ({
         colors.map((color, i, items) => (
           <a
             key={i}
-            onClick={() => onClick(color)}
+            onClick={() => {
+              localStorage.setItem("currentColor", color);
+              onClick(color);
+            }}
             className={joinStyleClasses(
               classes.btns,
               value === color ? classes.selected : ""

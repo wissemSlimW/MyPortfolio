@@ -9,7 +9,8 @@ import "react-toastify/dist/ReactToastify.css";
 
 export const App = () => {
   const [themeColor, setThemeColor] = useState<ColorsName>(
-    DEFAULT_VALUES.themeColor
+    (localStorage.getItem("currentColor") as ColorsName) ||
+      DEFAULT_VALUES.themeColor
   );
   const [showMenu, setShowMenu] = useState<boolean>(DEFAULT_VALUES.showMenu);
   const [mobileMenuHighlight, setMobileMenuHighlight] = useState(

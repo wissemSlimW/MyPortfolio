@@ -56,7 +56,11 @@ export const Slider = (props: SliderProps) => {
       <div className={classes.thumbnails}>
         {rotateArrayLeft(list, 1).map((item) => (
           <div className={classes.thumbnail} key={item.id}>
-            <img className={classes.thumbImg} src={item.mainImage} alt="thumbnail image" />
+            <img
+              className={classes.thumbImg}
+              src={item.mainImage}
+              alt="thumbnail image"
+            />
             <div className={classes.thumbContent}>
               <span className={classes.thumbTitle}>{item.title}</span>
               <span className={classes.thumbDescription}>Description</span>
@@ -66,12 +70,12 @@ export const Slider = (props: SliderProps) => {
       </div>
 
       <div className={classes.arrows}>
-        <button className={classes.arrowBtn} onClick={navPrev}>
-          {"<"}
-        </button>
-        <button className={classes.arrowBtn} onClick={navNext}>
-          {">"}
-        </button>
+        <span className={classes.arrowBtn} onClick={navPrev}>
+          <button>{"<"}</button>
+        </span>
+        <span className={classes.arrowBtn} onClick={navNext}>
+          <button>{">"}</button>
+        </span>
       </div>
       <div className={classes.time}></div>
     </div>
@@ -92,7 +96,11 @@ const Item = (props: { item: Project; showAnimation: boolean }) => {
       )}
       ref={ref}
     >
-      <img className={classes.itemImg} src={props.item.mainImage} alt="project wallpaper" />
+      <img
+        className={classes.itemImg}
+        src={props.item.mainImage}
+        alt="project wallpaper"
+      />
       <div className={classes.content}>
         <h3 className={classes.title}>{props.item.title}</h3>
         <div className={classes.description}>

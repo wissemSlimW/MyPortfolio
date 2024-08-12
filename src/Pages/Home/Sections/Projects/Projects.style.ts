@@ -4,6 +4,7 @@ export const useProjectsStyle = createUseStyles({
   projectCardsContainer: {
     justifyContent: "center",
     display: "flex",
-    flexWrap:'wrap'
+    flexWrap:'wrap',
+    gap:20,
   },
 });

@@ -1,35 +1,27 @@
 import { createUseStyles } from "react-jss";
 
-export const useProjectCardStyles = createUseStyles({
+export const useProjectCardStyles = createUseStyles((theme: AppTheme) => ({
   cardContainer: {
     width: 320,
     height: 425,
     padding: 5,
     position: "relative",
+    cursor: "pointer",
     "&:hover $cardBlockContent": {
       transform: "rotateY(180deg)",
     },
-    "&:hover $cardThumbnailBack": {
-      display: "flex",
-    },
-    "&:hover $cardThumbnail": {
-      display: "none",
-    },
   },
   cardBlockContent: {
-    position: "relative",
+    position: "absolute",
     width: "100%",
     height: "100%",
     textAlign: "center",
-    transition: "transform 0.6s",
-    transformStyle: "preserve-30",
-    boxShadow: "8 4px 8px 0 rgba(B, 8, 8, 8.7)",
+    transition: "all .8s",
+    transformStyle: "preserve-3d",
   },
   cardThumbnailBack: {
-    transform: "scaleX(-1)",
+    transform: "rotateY(180deg)",
     position: "absolute",
-    inset: 0,
-    display: "none",
     width: "100%",
     height: "100%",
     borderRadius: 25,
@@ -37,10 +29,9 @@ export const useProjectCardStyles = createUseStyles({
     backfaceVisibility: "hidden",
   },
   cardThumbnail: {
+    boxShadow: "inset 0 0 7px #00000040",
     padding: 4,
     position: "absolute",
-    inset: 0,
-    display: "flex",
     width: "100%",
     height: "100%",
     overflow: "hidden",
@@ -48,7 +39,31 @@ export const useProjectCardStyles = createUseStyles({
     webkitBackfaceVisibility: "hidden",
     backfaceVisibility: "hidden",
   },
+  thumbContent: {
+    position: "relative",
+    width: "100%",
+    height: "100%",
+  },
+  thumbTitleContainer: {
+    position: "absolute",
+    inset: 0,
+    zIndex: 2,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "end",
+    padding: 20,
+    boxShadow: "inset #00000052 -8px -8px 20px 10px",
+    "&>span": {
+      fontSize: 28,
+      fontWeight: 700,
+      color: theme.colorPrimary,
+      background: "#00000052",
+      borderRadius: 20,
+      padding: 10,
+    },
+  },
   thumbnailImg: {
+    filter: "brightness(0.8)",
     width: "100%",
     height: "100%",
     objectFit: "cover",
@@ -63,18 +78,17 @@ export const useProjectCardStyles = createUseStyles({
     borderRadius: 25,
   },
   hoverAnimationDark: {
-    "&:hover $animationContainer":  { display: "flex" },
+    "&:hover $animationContainer": { display: "flex" },
   },
   hoverAnimationLight: {
     "&:hover": {
       "&>div>:last-child": {
-        backgroundColor: ({ theme }: { theme: AppTheme }) =>
-          theme.colorPrimaryLight,
+        backgroundColor: theme.colorPrimaryLight,
       },
     },
   },
   card: {
-    backgroundColor: ({ theme }: { theme: AppTheme }) => theme.colorWhite,
+    backgroundColor: theme.colorWhite,
     width: "100%",
     height: "100%",
     borderRadius: 20,
@@ -102,7 +116,7 @@ export const useProjectCardStyles = createUseStyles({
       textTransform: "none",
       borderRadius: 25,
       fontWeight: 600,
-      backgroundColor: ({ theme }: { theme: AppTheme }) => theme.colorPrimary,
+      backgroundColor: theme.colorPrimary,
     },
   },
   animationContainer: {
@@ -118,8 +132,7 @@ export const useProjectCardStyles = createUseStyles({
     height: "150%",
     animation: " $rotate  8s infinite linear",
     borderRadius: 15,
-    background: ({ theme }: { theme: AppTheme }) =>
-      `conic-gradient( ${theme.colorPrimary} 0deg ,
+    background: `conic-gradient( ${theme.colorPrimary} 0deg ,
         transparent 80deg , transparent 180deg ,
         ${theme.colorPrimary} 180deg ,
         transparent 260deg , transparent 360deg )`,
@@ -148,7 +161,7 @@ export const useProjectCardStyles = createUseStyles({
   title: {
     fontSize: 20,
     fontWeight: 600,
-    color: ({ theme }: { theme: AppTheme }) => theme.colorPrimary,
+    color: theme.colorPrimary,
   },
   FlipCardInner: {
     position: "relative",
@@ -171,4 +184,4 @@ export const useProjectCardStyles = createUseStyles({
     WebkitBackfaceVisibility: "hidden",
     backfaceVisibility: "hidden",
   },
-});
+}));

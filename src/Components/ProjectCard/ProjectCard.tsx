@@ -34,13 +34,21 @@ export const ProjectCard = ({
       )}
       style={{ animationDuration: `${1 + index * 0.1}s` }}
     >
-      <Grid className={classes.cardBlockContent}>
+      <Grid
+        className={classes.cardBlockContent}
+        onClick={() => navigate(`/projects/${card.id}`)}
+      >
         <Grid className={classes.cardThumbnail}>
-          <Grid
-            component={"img"}
-            src={card.mainImage}
-            className={classes.thumbnailImg}
-          ></Grid>
+          <Grid className={classes.thumbContent}>
+            <Grid
+              component={"img"}
+              src={card.mainImage}
+              className={classes.thumbnailImg}
+            ></Grid>
+            <Grid className={classes.thumbTitleContainer}>
+              <Grid component={"span"}>{card.title}</Grid>
+            </Grid>
+          </Grid>
         </Grid>
         <Grid className={classes.cardThumbnailBack}>
           <Grid className={classes.cardBlock}>
@@ -60,16 +68,12 @@ export const ProjectCard = ({
               <Grid className={classes.descriptionContainer}>
                 <Grid>{card.description}</Grid>
               </Grid>
-              <Button
-                variant="contained"
-                className={classes.buttonStyle}
-                onClick={() => navigate(`/projects/${card.id}`)}
-              >
+              <Button variant="contained" className={classes.buttonStyle}>
                 View more details
               </Button>
             </Grid>
           </Grid>
-        </Grid>{" "}
+        </Grid>
       </Grid>
     </Grid>
   );

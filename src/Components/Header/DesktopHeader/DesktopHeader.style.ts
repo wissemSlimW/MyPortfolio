@@ -4,15 +4,16 @@ export const useDesktopHeaderStyles = createUseStyles((theme: AppTheme) => ({
   header: {
     position: "absolute",
     zIndex: 10,
-    insetBlockStart: "50dvh",
+    insetBlockStart: 0,
     insetInlineStart: 0,
     alignItems: "center",
+    display: "flex",
+    height:"100dvh"
   },
   navBar: {
     borderStartEndRadius: 45,
     borderEndEndRadius: 45,
-    // backgroundColor: theme.colorWhite,
-    marginBlockStart: "-25dvh",
+    marginBlock: "auto",
     gap: 10,
     width: 80,
     maxWidth: 80,

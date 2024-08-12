@@ -24,11 +24,14 @@ export const SKILL_CARDS: Skill[] = [
 
 export const PROJECT_CARDS: Project[] = [
   {
+    id: "school",
+    title: "School",
+    mainImage: projectImages.school.main,
+    logo: projectImages.school.logo,
     description: [
+      "An innovative organizational solution that enhances your school's administrative efficiency by delivering digital harmony, simplicity, fluidity, and excellence!",
       "A project that involves the design and implementation of a sophisticated ERP-CRM website meticulously crafted for seamless school management. Tailored user spaces for students, parents, and teachers provide an intuitive interface for a range of tasks. The platform boasts a rich feature set, including ERP tools for comprehensive resource planning, an intuitive scheduler, real-time web-push notifications, an efficient task manager, and an automated billing system. With a focus on optimizing and centralizing internal school services, this comprehensive solution enhances overall operational efficiency, offering a robust and user-friendly platform for effective school administration.",
     ],
-    id: "school",
-    mainImage: projectImages.school.original[0],
     technologies: [
       "reactJs",
       "mongoDB",
@@ -38,7 +41,6 @@ export const PROJECT_CARDS: Project[] = [
       "nodeJs",
       "git",
     ],
-    title: "School",
     contributions: [
       "Designing user interfaces using ReactJs, Material-Ui.",
       "Implementing the business layers TypeScript.",
@@ -48,20 +50,24 @@ export const PROJECT_CARDS: Project[] = [
     ],
   },
   {
+    id: "naqdiApp",
+    title: "Naqdi",
+    mainImage: projectImages.naqdiApp.main,
+    logo: projectImages.naqdiApp.logo,
     contributions: [
       "Created Naqdi Android/IOS mobile application using Flutter.",
       "Managed and contributed on Naqdi frontend web development process using React/typescript/Figma/Rest Api.",
       "Tested and optimized the project throughout the whole process.",
     ],
     description: [
-      "Introducing Naqdi: an innovative application reshaping the way customers collect and redeem reward points from various merchants' loyalty reward programs (LRPs). The app features three distinct portals:",
+      "An innovative application reshaping the way customers collect and redeem reward points from various merchants' loyalty reward programs (LRPs). ",
+      "The app features three distinct portals:",
       "Merchant Portal: Empowering merchants to create and manage their LRPs seamlessly. Here, merchants can fine-tune their reward programs, monitor data, run targeted ads, and engage with app users through notifications or SMS services.",
       "Employee Portal: Catering to employees, this portal provides tools to reward customers with points, coupons, or stamps. It facilitates direct customer engagement, ensuring smooth reward distribution.",
       "Admin Portal: Serving as the central control hub, the admin portal oversees and manages all operations within Naqdi. From monitoring merchant activities to supervising employee interactions, this portal ensures efficient platform management.",
       "Naqdi transforms the landscape of loyalty reward programs, empowering merchants, employees, and administrators to efficiently manage, engage, and benefit from its innovative reward point withdrawal system.",
     ],
-    id: "naqdiApp",
-    mainImage: projectImages.naqdiApp.main,
+
     technologies: [
       "reactJs",
       "materialUI",
@@ -71,9 +77,12 @@ export const PROJECT_CARDS: Project[] = [
       "mongoDB",
       "git",
     ],
-    title: "Naqdi",
   },
   {
+    id: "bevioo",
+    title: "Bevioo",
+    mainImage: projectImages.bevioo.main,
+    logo: projectImages.bevioo.logo,
     contributions: [
       "Took charge of overseeing and coordinating the development of the user interface and user experience to ensure the implementation of responsive and visually appealing designs.",
       "Managed the team by assigning tasks, setting clear expectations, and ensuring a comprehensive understanding of individual responsibilities. Actively reviewed tasks for quality assurance, emphasizing the simplification of processes and finding efficient solutions.",
@@ -81,12 +90,12 @@ export const PROJECT_CARDS: Project[] = [
     ],
 
     description: [
-      "Introducing Bevioo—an advanced web ERP application designed to streamline internal operations across multiple companies. This comprehensive platform efficiently manages crucial aspects like client and supplier databases, product catalogs, order and delivery systems, billing, payments, and transaction tracking.",
+      "Introducing Bevioo an advanced web ERP application designed to streamline internal operations across multiple companies.",
+      " This comprehensive platform efficiently manages crucial aspects like client and supplier databases, product catalogs, order and delivery systems, billing, payments, and transaction tracking.",
       "With an array of specialized functionalities, Bevioo ensures precise stock management and manipulation, allowing for seamless tracking and control. Its diverse dashboards and comprehensive reports cater to various needs, offering insights into sales, purchases, treasury, and more.",
       "Bevioo simplifies complex workflows, providing a centralized solution that enhances efficiency and transparency across interconnected internal services within these companies.",
     ],
-    id: "bevioo",
-    mainImage: projectImages.bevioo.main,
+
     technologies: [
       "reactJs",
       "materialUI",
@@ -97,9 +106,12 @@ export const PROJECT_CARDS: Project[] = [
       "sql",
       "git",
     ],
-    title: "Bevioo",
   },
   {
+    id: "dsf",
+    title: "Delivery service France",
+    mainImage: projectImages.dsf.original[0],
+    logo: projectImages.dsf.logo,
     contributions: [
       "Created new user interfaces and adjusted the previous work to improve the compatibility with the Figma design to 100%. ",
     ],
@@ -108,8 +120,7 @@ export const PROJECT_CARDS: Project[] = [
       "At its core, this platform simplifies the entire process. Users can effortlessly select their pickup and drop-off locations, while also specifying the shape and volume of their cargo—all through a seamless interface.",
       "This service redefines convenience. Clients no longer face the complexities of arranging transportation; instead, they engage with an interface designed for simplicity. Whether it's a few items or bulk cargo, this platform makes the entire process of transporting belongings a breeze.",
     ],
-    id: "dsf",
-    mainImage: projectImages.dsf.original[0],
+
     technologies: [
       "nextJs",
       "materialUI",
@@ -121,14 +132,17 @@ export const PROJECT_CARDS: Project[] = [
       "jira",
       "git",
     ],
-    title: "Delivery service France",
   },
   {
-    description: [
-      "ProjectTask Manager is a comprehensive and user-friendly application designed to streamline the management of large projects by facilitating the creation, assignment, and tracking of tasks among project members. This powerful tool enhances collaboration and ensures a smooth project progression through intuitive features and advanced functionalities.",
-    ],
     id: "taskManager",
+    title: "Task Manager",
     mainImage: projectImages.taskManager.main,
+    logo: projectImages.taskManager.logo,
+    description: [
+      "Task Manager is a comprehensive and user-friendly application designed to streamline the management of large projects by facilitating the creation, assignment, and tracking of tasks among project members.",
+      " This powerful tool enhances collaboration and ensures a smooth project progression through intuitive features and advanced functionalities.",
+    ],
+
     technologies: [
       "typeScript",
       "reactJs",
@@ -139,7 +153,7 @@ export const PROJECT_CARDS: Project[] = [
       "jira",
       "nodeJs",
     ],
-    title: "Task Manager",
+
     contributions: [
       "Designing user interfaces using ReactJs, Material-Ui.",
       "Implementing the business layers TypeScript.",
@@ -149,12 +163,15 @@ export const PROJECT_CARDS: Project[] = [
     ],
   },
   {
+    id: "omegup",
+    title: "Omegup",
+    mainImage: projectImages.omegup.original[0],
+    logo: projectImages.omegup.logo,
     description: [
       "Omegup Site serves as the official online platform for Omegup, providing visitors with access to a diverse array of products developed by the company. This website not only showcases the innovative range of offerings but also highlights the various services provided by Omegup. In addition to presenting the product collection, the site offers comprehensive details about the company, giving visitors insights into its background, values, and mission.",
       " With a user-friendly interface, Omegup Site offers seamless navigation for individuals seeking information about the company and its offerings. The platform goes beyond product display by providing visitors with the opportunity to learn more about the company administration and easily reach out for inquiries or collaboration. Whether exploring the product catalog, learning about the company's services, or reaching out for communication, Omegup Site serves as a central hub for those interested in engaging with the company and its offerings.",
     ],
-    id: "omegup",
-    mainImage: projectImages.omegup.original[0],
+
     technologies: [
       "reactJs",
       "typeScript",
@@ -164,7 +181,7 @@ export const PROJECT_CARDS: Project[] = [
       "nodeJs",
       "git",
     ],
-    title: "Omegup",
+
     contributions: [
       "Designing user interfaces using React Js Material-Ui.",
       "Implementing the business layers TypeScript.",
@@ -172,14 +189,18 @@ export const PROJECT_CARDS: Project[] = [
     ],
   },
   {
+    id: "fooddelivery",
+    title: " Food delivery",
+    mainImage: projectImages.fooddelivery.main,
+    logo: projectImages.fooddelivery.logo,
     description: [
-      "A comprehensive web application designed to revolutionize E-Commerce, focusing on the sale of food and groceries across three main categories: Restaurants, Groceries, and an exclusive Food & Fruits section. This multifaceted platform accommodates diverse user roles, presenting tailored interfaces for admins, store or company owners, delivery personnel, and customers.",
+      "A comprehensive web application designed to revolutionize E-Commerce, focusing on sales across three main categories: Restaurants, Groceries, and an exclusive Food & Fruits section.",
+      " This multifaceted platform accommodates diverse user roles, presenting tailored interfaces for admins, store or company owners, delivery personnel, and customers.",
       "One of the standout features is the integration of location-based services, allowing users to determine delivery locations through an intuitive map interface. Customers can seamlessly track their orders in real-time, from the moment of purchase through the delivery process. This real-time tracking capability ensures transparency and peace of mind, enhancing the overall user experience.",
       "Each section of the app is equipped with specialized systems: streamlined ordering processes, comprehensive delivery tracking functionalities, and efficient tools for managing customer-provider interactions. For instance, restaurant owners can manage their menus and orders, grocery stores can handle inventory and deliveries, while customers can explore, order, and track their purchases with ease.",
       "This sophisticated platform offers an interactive and dynamic space, fostering efficient interactions between customers and service providers. It's not just about buying; it's about creating an immersive experience that simplifies the entire process of shopping for food and groceries online, redefining convenience and reliability in E-Commerce.",
     ],
-    id: "fooddelivery",
-    mainImage: projectImages.fooddelivery.main,
+
     technologies: [
       "reactJs",
       "typeScript",
@@ -190,7 +211,6 @@ export const PROJECT_CARDS: Project[] = [
       "git",
       "jira",
     ],
-    title: " Food delivery",
     contributions: [
       "designing intuitive user interfaces using the dynamic capabilities of ReactJs and the feature-rich components of PrimeReact, enhancing the project with seamless functionality and polished design.",
       "Enriched the project by implementing robust business layers with TypeScript, ensuring strong typing and increased scalability while enhancing the codebase's reliability and maintainability.",
@@ -200,10 +220,12 @@ export const PROJECT_CARDS: Project[] = [
   },
   {
     description: [
-      "The Agricultural Investment Promotion Agency (APIA) is embarking on a transformative initiative in collaboration with the Agriculture Ministry, introducing an ERP-web application designed to meticulously manage internal services, projects, and entrepreneurs within its expansive incubator network. This innovative project places particular emphasis on efficiently overseeing diverse incubators affiliated with the agricultural promotion and investment agency. Each incubator is characterized by its unique location, comprehensive lists of adherent entrepreneurs, and a curated portfolio of programs aimed at fostering agricultural innovation. The ERP-web application facilitates seamless navigation through the intricate web of APIA's incubator ecosystem, providing a centralized platform to register and monitor entrepreneurs, their respective projects, and engagement in specialized programs. By implementing this comprehensive solution, APIA seeks to enhance collaboration, streamline project management, and empower entrepreneurs as they contribute to the growth and sustainability of the agricultural sector.",
+      "The Agricultural Investment Promotion Agency (APIA) is embarking on a transformative initiative in collaboration with the Agriculture Ministry.",
+      "Introducing an ERP-web application designed to meticulously manage internal services, projects, and entrepreneurs within its expansive incubator network. This innovative project places particular emphasis on efficiently overseeing diverse incubators affiliated with the agricultural promotion and investment agency. Each incubator is characterized by its unique location, comprehensive lists of adherent entrepreneurs, and a curated portfolio of programs aimed at fostering agricultural innovation. The ERP-web application facilitates seamless navigation through the intricate web of APIA's incubator ecosystem, providing a centralized platform to register and monitor entrepreneurs, their respective projects, and engagement in specialized programs. By implementing this comprehensive solution, APIA seeks to enhance collaboration, streamline project management, and empower entrepreneurs as they contribute to the growth and sustainability of the agricultural sector.",
     ],
     id: "apia",
     mainImage: projectImages.apia.main,
+    logo: projectImages.apia.logo,
     technologies: [
       "reactJs",
       "typeScript",
@@ -225,11 +247,16 @@ export const PROJECT_CARDS: Project[] = [
     ],
   },
   {
-    description: [
-      "Jupiter, the robust web solution crafted exclusively for AZ Metal, a renowned French conglomerate overseeing multiple construction companies. This dynamic platform serves as the command center, seamlessly handling critical services like billing, supplier and client management, product catalogs, offers, and precise stock control. Tailored to unify operations, Jupiter offers a singular interface for diverse construction entities, revolutionizing coordination and efficiency across the board.",
-    ],
     id: "jupiter",
+    title: "Jupiter",
     mainImage: projectImages.jupiter.original[0],
+    logo: projectImages.jupiter.logo,
+    description: [
+      "Jupiter, the robust web solution crafted exclusively for AZ Metal, a renowned French conglomerate overseeing multiple construction companies.",
+      " This dynamic platform serves as the command center, seamlessly handling critical services like billing, supplier and client management, product catalogs, offers, and precise stock control.",
+      " Tailored to unify operations, Jupiter offers a singular interface for diverse construction entities, revolutionizing coordination and efficiency across the board.",
+    ],
+
     technologies: [
       "reactJs",
       "redux",
@@ -238,7 +265,6 @@ export const PROJECT_CARDS: Project[] = [
       "git",
       "nodeJs",
     ],
-    title: "Jupiter",
     contributions: [
       "Designing user interfaces using ReactJs-Bootstrap",
       "Implementing the business layers",

@@ -1,50 +1,85 @@
 import { Grid } from "@mui/material";
-import { MouseEvent, TouchEvent, useRef, useState } from "react";
+import { useState } from "react";
 import { useSliderCarouselStyles } from "./SliderCarouseul.style";
 import { useTheme } from "react-jss";
 import { joinStyleClasses } from "../../Utils";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
-export const SliderCarousel = ({ cards }: { cards: { original: string[], small: string[] } }) => {
-  const theme = useTheme<AppTheme>()
+export const SliderCarousel = ({
+  cards,
+}: {
+  cards: { original: string[]; small: string[] };
+}) => {
+  const theme = useTheme<AppTheme>();
   const classes = { ...useSliderCarouselStyles({ theme }) };
-  const [move, setMove] = useState(0);
-  const ref = useRef<HTMLDivElement>(null);
-  const [loaded, setLoaded] = useState<Record<number, boolean>>()
-  const handleMouseMove = (e: MouseEvent) => {
-    const width = ref.current?.getBoundingClientRect().width || 0;
-    const val = (e.clientX / width) * 540;
-    setMove((prev) => ((val % 90 !== 0) ? val : prev));
+  const [loaded, setLoaded] = useState<Record<number, boolean>>();
+  const settings = {
+    dots: true,
+    arrows: false,
+    infinite: true,
+    speed: 700,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    cssEase: "linear",
+    pauseOnHover: true,
+    pauseOnFocus: true,
+    responsive: [
+      {
+        breakpoint: 10000,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 750,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          initialSlide: 2,
+        },
+      },
+    ],
   };
-  const handleTouchMove = (e: TouchEvent) => {
-    const width = ref.current?.getBoundingClientRect().width || 0;
-    const val = (e.touches[0].clientX / width) * 540;
-    setMove((prev) => (val % 90 !== 0 ? val : prev));
-  };
-
   return (
-    <Grid className={classes.carouselContainer} {...{ ref }}>
-      <Grid
-        className={classes.box}
-        style={{
-          transform: `perspective(2000vw) rotateX(-2deg) rotateY(${move}deg)`,
-        }}
-        onMouseMove={handleMouseMove}
-        onTouchMove={handleTouchMove}
-      >
+    <Grid className={classes.carouselContainer}>
+      <Slider {...settings}>
         {cards.original.map((img, key) => (
-          <Grid
-            component="span"
-            {...{ key }}
-            style={{
-              transform: `rotateY(calc(${key}* ${360 / cards.original.length
-                }deg)) translateZ(${(500 * cards.original.length) / (2 * Math.PI)}px)`,
-            }}
-          ><Grid className={joinStyleClasses(!loaded?.[key] ? classes.loadingImgAnimation : '')} style={!loaded?.[key] ? { backgroundImage: `url(${cards.small[key]})` } : {}}>
-              <img src={img} alt="project image" loading="lazy" onLoad={() => setLoaded(prev => ({ ...prev, [key]: true }))} />
-            </Grid>
-          </Grid>
+          <div className={classes.imgContainer}>
+            <div
+              className={joinStyleClasses(
+                classes.imgSkeleton,
+                !loaded?.[key] ? classes.loadingImgAnimation : ""
+              )}
+              style={{
+                backgroundImage: !loaded?.[key]
+                  ? `url(${cards.small[key]})`
+                  : "",
+              }}
+            >
+              <img
+                className={classes.img}
+                src={img}
+                alt="project image"
+                loading="lazy"
+                onLoad={() => setLoaded((prev) => ({ ...prev, [key]: true }))}
+              />
+            </div>
+          </div>
         ))}
-      </Grid>
+      </Slider>
     </Grid>
   );
 };

@@ -1,9 +1,9 @@
 import { Grid } from "@mui/material";
-import { useContext, useEffect, useMemo, useRef } from "react";
+import { useContext, useEffect, useMemo } from "react";
 import { useTheme } from "react-jss";
-import { Award, Cap } from "../../../../Assets/Svg";
+import { Award, Cap, Hexagon } from "../../../../Assets/Svg";
 import { resumeLink } from "../../../../Constants/constants";
-import { profileImg } from "../../../../Constants/images";
+import { imgProfileSquare, profileImg } from "../../../../Constants/images";
 import { AppContext } from "../../../../Context";
 import { useOnScreen } from "../../../../Hooks";
 import { useGlobalStyles } from "../../../../Styles/global.style";
@@ -30,13 +30,12 @@ export const About = () => {
     ],
     [theme]
   );
-  const imgRef = useRef<HTMLSpanElement>(null);
   useEffect(() => {
     onScreen && context.setMobileMenuHighlight!("about");
   }, [onScreen]);
   const classes = {
     ...useHomeStyle({ theme }),
-    ...useAboutStyle({ theme: { theme, size: imgRef.current?.clientWidth } }),
+    ...useAboutStyle({ theme }),
     ...useGlobalStyles({ theme }),
   };
   return (
@@ -97,15 +96,15 @@ export const About = () => {
               </Grid>
             </Grid>
             <Grid item xs={12} md={6} className={classes.imgContainer}>
-              <Grid component="span" className={classes.imgStyle} ref={imgRef}>
-                <Grid component="span" className={classes.imgBgStart}></Grid>
-                <Grid component="span" className={classes.imgBgEnd}></Grid>
-                <Grid
-                  component="img"
-                  src={profileImg}
-                  alt="profile image"
-                ></Grid>
-              </Grid>
+              <Grid component="span" className={classes.imgBgStart}></Grid>
+              <Grid component="span" className={classes.imgBgEnd}></Grid>
+              <Hexagon borderColor={theme.colorLight} />
+              <Grid
+                className={classes.image}
+                component="img"
+                src={imgProfileSquare}
+                alt="profile image"
+              />
             </Grid>
           </Grid>
         </Grid>

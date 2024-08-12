@@ -7,6 +7,7 @@ interface Project {
   mainImage: string;
   githubLink?: string;
   liveDemoLink?: string;
+  logo: string;
 }
 
 type ProjectNames =

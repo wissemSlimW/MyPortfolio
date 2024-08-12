@@ -7,8 +7,8 @@ export const useHomeStyle = createUseStyles((theme: AppTheme) => ({
     flexDirection: "column",
   },
   section: {
-    paddingBlockStart: 70,
-    paddingBlockEnd: 120,
+    paddingBlockStart: 30,
+    paddingBlockEnd: 30,
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",

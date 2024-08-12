@@ -136,16 +136,28 @@ export const useSliderStyles = createUseStyles((theme: AppTheme) => ({
     alignItems: "center",
   },
   arrowBtn: {
-    width: 40,
-    height: 40,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    width: 50,
+    height: 50,
     borderRadius: "50%",
-    backgroundColor: theme.colorPrimaryLight,
-    border: "none",
-    color: theme.colorWhite,
-    fontFamily: "monospace", // TODO
-    fontWeight: "bold",
-    transition: ".5s",
-    "&:hover": {
+    backgroundColor: "#00000010",
+    boxShadow: "0 0 7px #00000052",
+    "&>button": {
+      width: 50,
+      height: 50,
+      borderRadius: "50%",
+      backgroundColor: theme.colorPrimary,
+      border: "none",
+      color: theme.colorWhite,
+      fontSize: 20,
+      fontFamily: "monospace", // TODO
+      fontWeight: "bold",
+      transition: ".5s",
+    },
+
+    "&:hover>button": {
       backgroundColor: "#fff", // TODO
       color: "#000",
     },

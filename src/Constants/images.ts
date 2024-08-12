@@ -1,4 +1,5 @@
 export const projectImg1 = "/project1.jpg";
+export const imgProfileSquare = "/imgProfileSquare.png";
 export const skillsLogos: Record<SkillName, string> = {
   reactJs: "/skills/reactJs.png",
   nodeJs: "/skills/nodeJs.png",
@@ -23,10 +24,18 @@ export const skillsLogos: Record<SkillName, string> = {
 
 export const projectImages: Record<
   ProjectNames,
-  { original: string[]; small: string[]; main: string }
+  {
+    original: string[];
+    small: string[];
+    main: string;
+    collage: string;
+    logo: string;
+  }
 > = {
   apia: {
     main: "/projects/apia/main.png",
+    collage: "/projects/apia/collage.png",
+    logo: "/projects/apia/logo.png",
     original: [
       "/projects/apia/apia1.png",
       "/projects/apia/apia2.png",
@@ -52,6 +61,8 @@ export const projectImages: Record<
   },
   fooddelivery: {
     main: "/projects/foodDelivery/main.png",
+    collage: "/projects/foodDelivery/foodDelivery9.png",
+    logo: "/projects/foodDelivery/logo.png",
     small: [
       "/projects/foodDelivery/foodDelivery1-small.png",
       "/projects/foodDelivery/foodDelivery2-small.png",
@@ -76,7 +87,9 @@ export const projectImages: Record<
     ],
   },
   jupiter: {
-    main: "/projects/foodDelivery/jupiter1.png",//TO DO
+    main: "/projects/foodDelivery/jupiter1.png", //TO DO
+    collage: "/projects/jupiter/jupiter2.png",
+    logo: "/projects/jupiter/logo.png",
     small: [
       "/projects/jupiter/jupiter1-small.png",
       "/projects/jupiter/jupiter2-small.png",
@@ -95,8 +108,9 @@ export const projectImages: Record<
     ],
   },
   omegup: {
-    main: "/projects/foodDelivery/omegup1.png",//TO DO
-
+    main: "/projects/omegup/omegup1.png", //TO DO
+    collage: "/projects/omegup/omegup9.png",
+    logo: "/projects/omegup/logo.png",
     small: [
       "/projects/omegup/omegup1-small.png",
       "/projects/omegup/omegup2-small.png",
@@ -121,8 +135,9 @@ export const projectImages: Record<
     ],
   },
   school: {
-    main: "/projects/foodDelivery/school1.png",//TO DO
-
+    main: "/projects/school/school1.png",
+    collage: "/projects/school/school2.png",
+    logo: "/projects/school/logo.png",
     small: [
       "/projects/school/school1-small.png",
       "/projects/school/school2-small.png",
@@ -148,6 +163,8 @@ export const projectImages: Record<
   },
   naqdiApp: {
     main: "/projects/naqdiApp/main.png",
+    collage: "/projects/naqdiApp/naqdiApp2.png",
+    logo: "/projects/naqdiApp/logo.png",
     small: [
       "/projects/naqdiApp/naqdiApp1-small.png",
       "/projects/naqdiApp/naqdiApp2-small.png",
@@ -173,6 +190,8 @@ export const projectImages: Record<
   },
   taskManager: {
     main: "/projects/taskmanager/main.png",
+    collage: "/projects/taskmanager/taskmanager2.jfif",
+    logo: "/projects/taskmanager/logo.png",
     small: [
       "/projects/taskmanager/taskmanager1-small.jfif",
       "/projects/taskmanager/taskmanager2-small.jfif",
@@ -194,6 +213,8 @@ export const projectImages: Record<
   },
   bevioo: {
     main: "/projects/bevioo/main.png",
+    collage: "/projects/bevioo/collage.png",
+    logo: "/projects/bevioo/logo.png",
     small: [
       "/projects/bevioo/bevioo1-small.png",
       "/projects/bevioo/bevioo2-small.png",
@@ -218,8 +239,9 @@ export const projectImages: Record<
     ],
   },
   dsf: {
-    main: "/projects/foodDelivery/dsf1.png",//TO DO
-
+    main: "/projects/dsf/dsf1.png", //TO DO
+    collage: "/projects/dsf/dsf4.png",
+    logo: "/projects/dsf/logo.png",
     small: [
       "/projects/dsf/dsf1-small.png",
       "/projects/dsf/dsf2-small.png",

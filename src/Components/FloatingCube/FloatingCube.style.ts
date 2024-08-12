@@ -1,15 +1,9 @@
 import { createUseStyles } from "react-jss";
 
-export const useFloatingCubeStyle = createUseStyles({
+export const useFloatingCubeStyle = createUseStyles((theme: AppTheme) => ({
   cubeContainer: {
     paddingBlock: 30,
     paddingInline: 15,
-    "&:hover": {
-      "&>div": {
-        // transform: "rotateX(-30deg) rotateY(-45deg) translateZ(50px)",
-        // animation: "$rotate 4s linear infinite",
-      },
-    },
   },
   cube: {
     position: "relative",
@@ -17,14 +11,13 @@ export const useFloatingCubeStyle = createUseStyles({
     width: 150,
     transformStyle: "preserve-3d",
     transform: "rotateX(-30deg) rotateY(-15deg)",
-    animation: "$rotate 4s linear infinite",
     "&>:nth-child(1)": {
       position: "absolute",
       insetInlineStart: 0,
       insetBlockStart: 0,
       width: 150,
       height: 150,
-      backgroundColor: ({ theme }: { theme: AppTheme }) => theme.colorLight,
+      backgroundColor: theme.colorLight,
       transform: "rotateX(90deg) translateZ(75px)",
       backgroundSize: "contain",
       backgroundPosition: "center",
@@ -36,7 +29,7 @@ export const useFloatingCubeStyle = createUseStyles({
       insetInlineStart: 0,
       width: "100%",
       height: "100%",
-      display: 'block',
+      display: "block",
       transformStyle: "preserve-3d",
       "&>:nth-child(1)": {
         transform: " rotateY(0deg) translateZ(75px)",
@@ -56,8 +49,7 @@ export const useFloatingCubeStyle = createUseStyles({
         insetInlineStart: 0,
         width: "100%",
         height: "100%",
-        background: ({ theme }: { theme: AppTheme }) =>
-          `linear-gradient(${theme.colorLight} ,${theme.colorPrimary})`,
+        background: `linear-gradient(${theme.colorLight} ,${theme.colorPrimary})`,
       },
     },
     "&>:nth-child(3)": {
@@ -67,11 +59,10 @@ export const useFloatingCubeStyle = createUseStyles({
       insetBlockStart: 0,
       width: 150,
       height: 150,
-      background: ({ theme }: { theme: AppTheme }) => theme.colorPrimary,
+      background: theme.colorPrimary,
       transform: "rotateX(90deg) translateZ(-50px)",
       filter: "blur(5px)",
-      boxShadow: ({ theme }: { theme: AppTheme }) =>
-        `0 0 120px ${theme.colorPrimary}`,
+      boxShadow: `0 0 120px ${theme.colorPrimary}`,
     },
   },
   "@keyframes rotate": {
@@ -86,11 +77,11 @@ export const useFloatingCubeStyle = createUseStyles({
     },
   },
   nameContainer: {
-    color: ({ theme }: { theme: AppTheme }) => theme.colorPrimary,
+    color: theme.colorPrimary,
     fontSize: 16,
     fontWeight: 600,
-    display: 'flex',
-    justifyContent: 'center',
-    paddingBlock: 10
-  }
-});
+    display: "flex",
+    justifyContent: "center",
+    paddingBlock: 10,
+  },
+}));
