@@ -5,6 +5,7 @@ interface Project {
   contributions: string[];
   id: ProjectNames;
   mainImage: string;
+  mainSmall: string;
   githubLink?: string;
   liveDemoLink?: string;
   logo: string;

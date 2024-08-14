@@ -19,6 +19,15 @@ export const useMainStyle = createUseStyles((theme: AppTheme) => ({
     aspectRatio: 1,
     position: "relative",
   },
+  loadingImg: {
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center",
+    backgroundSize: "contain",
+    position: "absolute",
+    inset: 0,
+    zIndex: 2,
+    borderRadius: "50%",
+  },
   imgStyle: {
     width: "100%",
     height: "100%",

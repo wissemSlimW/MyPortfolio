@@ -89,6 +89,10 @@ export const useProjectStyles = createUseStyles((theme: AppTheme) => ({
   showCaseImgWrapper: {
     display: "flex",
     flex: 1,
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
+    borderRadius: 20,
   },
   showCaseImg: {
     borderRadius: 15,

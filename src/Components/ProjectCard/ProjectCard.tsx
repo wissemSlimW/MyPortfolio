@@ -5,6 +5,7 @@ import { useOnScreen } from "../../Hooks";
 import { useGlobalStyles } from "../../Styles/global.style";
 import { joinStyleClasses } from "../../Utils";
 import { useProjectCardStyles } from "./ProjectCard.style";
+import { useState } from "react";
 
 export const ProjectCard = ({
   card,
@@ -14,7 +15,7 @@ export const ProjectCard = ({
   index: number;
 }) => {
   const navigate = useNavigate();
-
+  const [loaded, setLoaded] = useState(false);
   const { onScreen, ref } = useOnScreen();
   const theme = useTheme<AppTheme>();
   const classes = {
@@ -39,10 +40,19 @@ export const ProjectCard = ({
         onClick={() => navigate(`/projects/${card.id}`)}
       >
         <Grid className={classes.cardThumbnail}>
-          <Grid className={classes.thumbContent}>
+          <Grid
+            className={joinStyleClasses(
+              classes.thumbContent,
+              loaded ? "" : classes.loadingImgAnimation
+            )}
+            style={{ backgroundImage: loaded ? "" : `url(${card.mainSmall})` }}
+          >
             <Grid
-              component={"img"}
+              component="img"
+              loading="lazy"
               src={card.mainImage}
+              onLoad={() => setLoaded(true)}
+              style={{ visibility: loaded ? "visible" : "hidden" }}
               className={classes.thumbnailImg}
             ></Grid>
             <Grid className={classes.thumbTitleContainer}>
@@ -57,11 +67,22 @@ export const ProjectCard = ({
             </Grid>
             <Grid className={classes.card}>
               <Grid
-                component={"img"}
-                alt="project wallpaper"
-                className={classes.imageStyle}
-                src={card.mainImage}
-              ></Grid>
+                className={joinStyleClasses(
+                  classes.backThumbImgContainer,
+                  loaded ? "" : classes.loadingImgAnimation
+                )}
+                style={{
+                  backgroundImage: loaded ? "" : `url(${card.mainSmall})`,
+                }}
+              >
+                <Grid
+                  component="img"
+                  style={{ visibility: loaded ? "visible" : "hidden" }}
+                  alt="project wallpaper"
+                  className={classes.imageStyle}
+                  src={card.mainImage}
+                ></Grid>
+              </Grid>
               <Grid component={"h4"} className={classes.title}>
                 {card.title}
               </Grid>

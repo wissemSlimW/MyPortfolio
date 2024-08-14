@@ -5,16 +5,22 @@ export const useAboutStyle = createUseStyles((theme: AppTheme) => ({
     alignItems: "center",
     aspectRatio: 2,
   },
-  image: {
+  imageloadingContainer: {
     position: "absolute",
     zIndex: 2,
     inset: 0,
     insetInline: "0.8%",
-    insetBlockStart: "-7%",
-    objectFit: "contain",
-    objectPosition: "center",
+    insetBlockStart: "-7.2%",
     height: "100%",
     overflow: "hidden",
+    backgroundSize: "contain",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+  },
+  image: {
+    height: "100%",
+    objectFit: "contain",
+    objectPosition: "center",
   },
   hexagon: { width: "100%" },
   imgContainer: {

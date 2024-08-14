@@ -1,5 +1,5 @@
 import { Grid } from "@mui/material";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useTheme } from "react-jss";
 import ReactTyped from "react-typed";
 import {
@@ -9,7 +9,7 @@ import {
 } from "../../../../Assets/Svg";
 import { AnimatedBackground } from "../../../../Components/AnimatedBackground";
 import { links } from "../../../../Constants/constants";
-import { profileImg } from "../../../../Constants/images";
+import { profileImg, profileImgSmall } from "../../../../Constants/images";
 import { AppContext } from "../../../../Context";
 import { useOnScreen } from "../../../../Hooks";
 import { useGlobalStyles } from "../../../../Styles/global.style";
@@ -20,6 +20,7 @@ import { useMainStyle } from "./Main.style";
 export const Main = () => {
   const context = useContext(AppContext);
   const { onScreen, ref } = useOnScreen();
+  const [loaded, setLoaded] = useState(false);
   useEffect(() => {
     onScreen && context.setMobileMenuHighlight!("main");
   }, [onScreen]);
@@ -49,13 +50,7 @@ export const Main = () => {
         sm={10}
         className={classes.foregroundContainer}
       >
-        <Grid
-          item
-          xs={12}
-          md={6}
-          className={classes.imgContainer}
-          container
-        >
+        <Grid item xs={12} md={6} className={classes.imgContainer} container>
           <Grid
             container
             sx={{ justifyContent: { xs: "center", md: "end" } }}
@@ -63,11 +58,22 @@ export const Main = () => {
           >
             <Grid className={classes.imageContainer}>
               <Grid
-                component={"img"}
-                className={classes.imgStyle}
-                src={profileImg}
-                alt="profile image"
-              ></Grid>
+                className={classes.loadingImg}
+                style={{
+                  backgroundImage: loaded ? "" : `url(${profileImgSmall})`,
+                }}
+              >
+                <Grid
+                  component={"img"}
+                  className={classes.imgStyle}
+                  src={profileImg}
+                  alt="profile image"
+                  loading="lazy"
+                  style={{ visibility: loaded ? "visible" : "hidden" }}
+                  onLoad={() => setLoaded(true)}
+                ></Grid>
+              </Grid>
+
               <Grid className={classes.bgImg}></Grid>
             </Grid>
           </Grid>

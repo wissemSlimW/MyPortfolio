@@ -20,7 +20,7 @@ export const useSliderCarouselStyles = createUseStyles((theme: AppTheme) => ({
   },
   "@keyframes pulsing": {
     "50%": {
-      backgroundColor: "#00000050",
+      backgroundColor: "#00000005",
     },
   },
 

@@ -40,9 +40,13 @@ export const useProjectCardStyles = createUseStyles((theme: AppTheme) => ({
     backfaceVisibility: "hidden",
   },
   thumbContent: {
+    backgroundPosition: "center",
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
     position: "relative",
     width: "100%",
     height: "100%",
+    borderRadius: 25,
   },
   thumbTitleContainer: {
     position: "absolute",
@@ -183,5 +187,13 @@ export const useProjectCardStyles = createUseStyles((theme: AppTheme) => ({
     height: "100%",
     WebkitBackfaceVisibility: "hidden",
     backfaceVisibility: "hidden",
+  },
+  backThumbImgContainer: {
+    backgroundPosition: "center",
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    flex: 1,
+    width: "100%",
+    borderRadius: 15,
   },
 }));

@@ -53,4 +53,24 @@ export const useGlobalStyles = createUseStyles({
       transition: "all 1s",
     },
   },
+  loadingImgAnimation: {
+    position: "relative",
+    "&:before": {
+      content: '""',
+      position: "absolute",
+      inset: 0,
+      animation: "$pulsing 2s infinite linear",
+      backgroundColor: "#00000000",
+    },
+  },
+  loadingImgContainer: {
+    backgroundPosition: "center",
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+  },
+  "@keyframes pulsing": {
+    "50%": {
+      backgroundColor: "#00000050",
+    },
+  },
 });

@@ -1,6 +1,6 @@
 import { Grid } from "@mui/material";
 import { motion } from "framer-motion";
-import { useContext, useMemo } from "react";
+import { useContext, useMemo, useState } from "react";
 import { useTheme } from "react-jss";
 import { useParams } from "react-router";
 import { PROJECT_CARDS, SKILL_CARDS } from "../../Assets/data";
@@ -9,14 +9,18 @@ import { projectImages } from "../../Constants/images";
 import { fadeX, fadeY, joinStyleClasses, scale } from "../../Utils";
 import { useProjectStyles } from "./Projects.style";
 import { AppContext } from "../../Context";
+import { useGlobalStyles } from "../../Styles/global.style";
 
 export const Projects = () => {
   const { id } = useParams();
   const context = useContext(AppContext);
   const theme = useTheme<AppTheme>();
-  const classes = useProjectStyles({ theme });
+  const classes = {
+    ...useProjectStyles({ theme }),
+    ...useGlobalStyles({ theme }),
+  };
   const project = useMemo(() => PROJECT_CARDS.find((p) => p.id === id), [id]);
-
+  const [loaded, setLoaded] = useState({ img1: false, img2: false });
   return (
     <Grid
       className={joinStyleClasses(
@@ -100,21 +104,21 @@ export const Projects = () => {
           <Grid item xs={12} lg={6} className={classes.showCaseContent}>
             <motion.h2
               {...fadeY({ delay: 0.5, distance: -40 })}
-              // viewport={{ once: true }}
+              viewport={{ once: true }}
               className={classes.descriptiontTitle}
             >
               Project OverView
             </motion.h2>
             <motion.div
               {...fadeY({ delay: 0.5, distance: 100 })}
-              // viewport={{ once: true }}
+              viewport={{ once: true }}
               className={classes.descriptionText}
             >
               {project?.description.map((text, index) => (
                 <motion.li
                   key={index}
                   {...fadeY({ delay: 0.3 + 0.1 * index, distance: 40 })}
-                  // viewport={{ once: true }}
+                  viewport={{ once: true }}
                 >
                   {text}
                 </motion.li>
@@ -128,12 +132,25 @@ export const Projects = () => {
             lg={6}
             className={classes.showCaseImgContainer}
           >
-            <Grid className={classes.showCaseImgWrapper}>
+            <Grid
+              className={joinStyleClasses(
+                classes.showCaseImgWrapper,
+                loaded.img1 ? "" : classes.loadingImgAnimation
+              )}
+              style={{
+                backgroundImage: loaded.img1
+                  ? ""
+                  : `url(${projectImages[id as ProjectNames].small[0]})`,
+              }}
+            >
               <motion.img
                 {...fadeX({ delay: 0.5, distance: 100 })}
-                // viewport={{ once: true, amount: "some" }}
+                viewport={{ once: true, amount: "some" }}
                 className={classes.showCaseImg}
                 src={projectImages[id as ProjectNames].original[0]}
+                loading="lazy"
+                style={{ visibility: loaded.img1 ? "visible" : "hidden" }}
+                onLoad={() => setLoaded((prev) => ({ ...prev, img1: true }))}
               ></motion.img>
             </Grid>
           </Grid>
@@ -162,21 +179,34 @@ export const Projects = () => {
             lg={6}
             className={classes.showCaseImgContainer}
           >
-            <Grid className={classes.showCaseImgWrapper}>
+            <Grid
+              className={joinStyleClasses(
+                classes.showCaseImgWrapper,
+                loaded.img2 ? "" : classes.loadingImgAnimation
+              )}
+              style={{
+                backgroundImage: loaded.img2
+                  ? ""
+                  : `url(${projectImages[id as ProjectNames].collageSmall})`,
+              }}
+            >
               <motion.img
                 initial={{ opacity: 0, scale: 0.7 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ type: "spring", stiffness: 50, delay: 0.2 }}
-                // viewport={{ once: true, amount: "some" }}
+                viewport={{ once: true, amount: "some" }}
                 className={classes.showCaseImg}
                 src={projectImages[id as ProjectNames].collage}
+                loading="lazy"
+                style={{ visibility: loaded.img2 ? "visible" : "hidden" }}
+                onLoad={() => setLoaded((prev) => ({ ...prev, img2: true }))}
               />
             </Grid>
           </Grid>
           <Grid item xs={12} lg={6} className={classes.showCaseContent}>
             <motion.h2
               {...fadeY({ delay: 0.5, distance: -40 })}
-              // viewport={{ once: true }}
+              viewport={{ once: true }}
               className={classes.descriptiontTitle}
             >
               Contribution
@@ -187,7 +217,7 @@ export const Projects = () => {
                   key={index}
                   className={classes.listItems}
                   {...fadeY({ delay: 0.3 + 0.1 * index, distance: 40 })}
-                  // viewport={{ once: true }}
+                  viewport={{ once: true }}
                 >
                   {text}
                 </motion.li>

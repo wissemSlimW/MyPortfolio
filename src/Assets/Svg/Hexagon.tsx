@@ -1,4 +1,3 @@
-import { profileImg } from "../../Constants/images";
 
 export const Hexagon = ({
   borderColor,

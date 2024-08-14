@@ -27,6 +27,7 @@ export const PROJECT_CARDS: Project[] = [
     id: "school",
     title: "School",
     mainImage: projectImages.school.main,
+    mainSmall: projectImages.school.mainSmall,
     logo: projectImages.school.logo,
     description: [
       "An innovative organizational solution that enhances your school's administrative efficiency by delivering digital harmony, simplicity, fluidity, and excellence!",
@@ -53,6 +54,7 @@ export const PROJECT_CARDS: Project[] = [
     id: "naqdiApp",
     title: "Naqdi",
     mainImage: projectImages.naqdiApp.main,
+    mainSmall: projectImages.naqdiApp.mainSmall,
     logo: projectImages.naqdiApp.logo,
     contributions: [
       "Created Naqdi Android/IOS mobile application using Flutter.",
@@ -82,6 +84,7 @@ export const PROJECT_CARDS: Project[] = [
     id: "bevioo",
     title: "Bevioo",
     mainImage: projectImages.bevioo.main,
+    mainSmall: projectImages.bevioo.mainSmall,
     logo: projectImages.bevioo.logo,
     contributions: [
       "Took charge of overseeing and coordinating the development of the user interface and user experience to ensure the implementation of responsive and visually appealing designs.",
@@ -110,7 +113,8 @@ export const PROJECT_CARDS: Project[] = [
   {
     id: "dsf",
     title: "Delivery service France",
-    mainImage: projectImages.dsf.original[0],
+    mainImage: projectImages.dsf.main,
+    mainSmall: projectImages.dsf.mainSmall,
     logo: projectImages.dsf.logo,
     contributions: [
       "Created new user interfaces and adjusted the previous work to improve the compatibility with the Figma design to 100%. ",
@@ -137,6 +141,7 @@ export const PROJECT_CARDS: Project[] = [
     id: "taskManager",
     title: "Task Manager",
     mainImage: projectImages.taskManager.main,
+    mainSmall: projectImages.taskManager.mainSmall,
     logo: projectImages.taskManager.logo,
     description: [
       "Task Manager is a comprehensive and user-friendly application designed to streamline the management of large projects by facilitating the creation, assignment, and tracking of tasks among project members.",
@@ -165,7 +170,8 @@ export const PROJECT_CARDS: Project[] = [
   {
     id: "omegup",
     title: "Omegup",
-    mainImage: projectImages.omegup.original[0],
+    mainImage: projectImages.omegup.main,
+    mainSmall: projectImages.omegup.mainSmall,
     logo: projectImages.omegup.logo,
     description: [
       "Omegup Site serves as the official online platform for Omegup, providing visitors with access to a diverse array of products developed by the company. This website not only showcases the innovative range of offerings but also highlights the various services provided by Omegup. In addition to presenting the product collection, the site offers comprehensive details about the company, giving visitors insights into its background, values, and mission.",
@@ -192,6 +198,7 @@ export const PROJECT_CARDS: Project[] = [
     id: "fooddelivery",
     title: " Food delivery",
     mainImage: projectImages.fooddelivery.main,
+    mainSmall: projectImages.fooddelivery.mainSmall,
     logo: projectImages.fooddelivery.logo,
     description: [
       "A comprehensive web application designed to revolutionize E-Commerce, focusing on sales across three main categories: Restaurants, Groceries, and an exclusive Food & Fruits section.",
@@ -225,6 +232,7 @@ export const PROJECT_CARDS: Project[] = [
     ],
     id: "apia",
     mainImage: projectImages.apia.main,
+    mainSmall: projectImages.apia.mainSmall,
     logo: projectImages.apia.logo,
     technologies: [
       "reactJs",
@@ -249,7 +257,8 @@ export const PROJECT_CARDS: Project[] = [
   {
     id: "jupiter",
     title: "Jupiter",
-    mainImage: projectImages.jupiter.original[0],
+    mainImage: projectImages.jupiter.main,
+    mainSmall: projectImages.jupiter.mainSmall,
     logo: projectImages.jupiter.logo,
     description: [
       "Jupiter, the robust web solution crafted exclusively for AZ Metal, a renowned French conglomerate overseeing multiple construction companies.",

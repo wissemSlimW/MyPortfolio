@@ -1,9 +1,12 @@
 import { Grid } from "@mui/material";
-import { useContext, useEffect, useMemo } from "react";
+import { useContext, useEffect, useMemo, useState } from "react";
 import { useTheme } from "react-jss";
 import { Award, Cap, Hexagon } from "../../../../Assets/Svg";
 import { resumeLink } from "../../../../Constants/constants";
-import { imgProfileSquare, profileImg } from "../../../../Constants/images";
+import {
+  imgProfileSquare,
+  imgProfileSquareSmall,
+} from "../../../../Constants/images";
 import { AppContext } from "../../../../Context";
 import { useOnScreen } from "../../../../Hooks";
 import { useGlobalStyles } from "../../../../Styles/global.style";
@@ -14,6 +17,7 @@ import { useAboutStyle } from "./About.style";
 export const About = () => {
   const context = useContext(AppContext);
   const theme = useTheme<AppTheme>();
+  const [loaded, setLaoded] = useState(false);
   const { onScreen, ref } = useOnScreen();
   const data = useMemo(
     () => [
@@ -100,11 +104,23 @@ export const About = () => {
               <Grid component="span" className={classes.imgBgEnd}></Grid>
               <Hexagon borderColor={theme.colorLight} />
               <Grid
-                className={classes.image}
-                component="img"
-                src={imgProfileSquare}
-                alt="profile image"
-              />
+              className={classes.imageloadingContainer}
+                style={{
+                  backgroundImage: loaded
+                    ? ""
+                    : `url(${imgProfileSquareSmall})`,
+                }}
+              >
+                <Grid
+                  className={classes.image}
+                  component="img"
+                  src={imgProfileSquare}
+                  alt="profile image"
+                  loading="lazy"
+                  style={{ visibility: loaded ? "visible" : "hidden" }}
+                  onLoad={() => setLaoded(true)}
+                />
+              </Grid>
             </Grid>
           </Grid>
         </Grid>

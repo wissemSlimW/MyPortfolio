@@ -14,7 +14,7 @@ export const SliderCarousel = ({
 }) => {
   const theme = useTheme<AppTheme>();
   const classes = { ...useSliderCarouselStyles({ theme }) };
-  const [loaded, setLoaded] = useState<Record<number, boolean>>();
+  const [loaded, setLoaded] = useState<Record<number, boolean>>({});
   const settings = {
     dots: true,
     arrows: false,
@@ -53,29 +53,30 @@ export const SliderCarousel = ({
       },
     ],
   };
+  console.log({ loaded });
   return (
     <Grid className={classes.carouselContainer}>
       <Slider {...settings}>
         {cards.original.map((img, key) => (
-          <div className={classes.imgContainer}>
-            <div
-              className={joinStyleClasses(
-                classes.imgSkeleton,
-                !loaded?.[key] ? classes.loadingImgAnimation : ""
-              )}
-              style={{
-                backgroundImage: !loaded?.[key]
-                  ? `url(${cards.small[key]})`
-                  : "",
-              }}
-            >
-              <img
-                className={classes.img}
-                src={img}
-                alt="project image"
-                loading="lazy"
-                onLoad={() => setLoaded((prev) => ({ ...prev, [key]: true }))}
-              />
+          <div key={key} className={classes.imgContainer}>
+            <div className={classes.imgSkeleton}>
+              <div
+                // className={!!loaded?.[key] ? "" : classes.loadingImgAnimation}
+                style={{
+                  backgroundImage: !!loaded?.[key]
+                    ? ""
+                    : `url(${cards.small[key]})`,
+                }}
+              >
+                <img
+                  className={classes.img}
+                  src={img}
+                  alt="project image"
+                  style={{ visibility: !!loaded?.[key] ? "visible" : "hidden" }}
+                  loading="lazy"
+                  onLoad={() => {}}
+                />
+              </div>
             </div>
           </div>
         ))}

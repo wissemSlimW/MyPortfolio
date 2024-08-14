@@ -1,5 +1,8 @@
-export const projectImg1 = "/project1.jpg";
 export const imgProfileSquare = "/imgProfileSquare.png";
+export const imgProfileSquareSmall = "/imgProfileSquare-small.png";
+export const profileImg = "/profileImg.png";
+export const profileImgSmall = "/profileImg-small.png";
+
 export const skillsLogos: Record<SkillName, string> = {
   reactJs: "/skills/reactJs.png",
   nodeJs: "/skills/nodeJs.png",
@@ -28,13 +31,17 @@ export const projectImages: Record<
     original: string[];
     small: string[];
     main: string;
+    mainSmall: string;
     collage: string;
+    collageSmall: string;
     logo: string;
   }
 > = {
   apia: {
     main: "/projects/apia/main.png",
+    mainSmall: "/projects/apia/main-small.png",
     collage: "/projects/apia/collage.png",
+    collageSmall: "/projects/apia/collage-small.png",
     logo: "/projects/apia/logo.png",
     original: [
       "/projects/apia/apia1.png",
@@ -61,7 +68,9 @@ export const projectImages: Record<
   },
   fooddelivery: {
     main: "/projects/foodDelivery/main.png",
+    mainSmall: "/projects/foodDelivery/main-small.png",
     collage: "/projects/foodDelivery/foodDelivery9.png",
+    collageSmall: "/projects/foodDelivery/foodDelivery9-small.png",
     logo: "/projects/foodDelivery/logo.png",
     small: [
       "/projects/foodDelivery/foodDelivery1-small.png",
@@ -87,8 +96,10 @@ export const projectImages: Record<
     ],
   },
   jupiter: {
-    main: "/projects/foodDelivery/jupiter1.png", //TO DO
+    main: "/projects/jupiter/jupiter1.png", //TO DO
+    mainSmall: "/projects/jupiter/jupiter1-small.png", //TO DO
     collage: "/projects/jupiter/jupiter2.png",
+    collageSmall: "/projects/jupiter/jupiter2-small.png",
     logo: "/projects/jupiter/logo.png",
     small: [
       "/projects/jupiter/jupiter1-small.png",
@@ -109,7 +120,9 @@ export const projectImages: Record<
   },
   omegup: {
     main: "/projects/omegup/omegup1.png", //TO DO
+    mainSmall: "/projects/omegup/omegup1-small.png", //TO DO
     collage: "/projects/omegup/omegup9.png",
+    collageSmall: "/projects/omegup/omegup9-small.png",
     logo: "/projects/omegup/logo.png",
     small: [
       "/projects/omegup/omegup1-small.png",
@@ -135,8 +148,10 @@ export const projectImages: Record<
     ],
   },
   school: {
-    main: "/projects/school/school1.png",
+    main: "/projects/school/school1.png", // TODO
+    mainSmall: "/projects/school/school1-small.png", // TODO
     collage: "/projects/school/school2.png",
+    collageSmall: "/projects/school/school2-small.png",
     logo: "/projects/school/logo.png",
     small: [
       "/projects/school/school1-small.png",
@@ -163,7 +178,9 @@ export const projectImages: Record<
   },
   naqdiApp: {
     main: "/projects/naqdiApp/main.png",
+    mainSmall: "/projects/naqdiApp/main-small.png",
     collage: "/projects/naqdiApp/naqdiApp2.png",
+    collageSmall: "/projects/naqdiApp/naqdiApp2-small.png",
     logo: "/projects/naqdiApp/logo.png",
     small: [
       "/projects/naqdiApp/naqdiApp1-small.png",
@@ -190,7 +207,9 @@ export const projectImages: Record<
   },
   taskManager: {
     main: "/projects/taskmanager/main.png",
+    mainSmall: "/projects/taskmanager/main-small.png",
     collage: "/projects/taskmanager/taskmanager2.jfif",
+    collageSmall: "/projects/taskmanager/taskmanager2-small.jfif",
     logo: "/projects/taskmanager/logo.png",
     small: [
       "/projects/taskmanager/taskmanager1-small.jfif",
@@ -213,7 +232,9 @@ export const projectImages: Record<
   },
   bevioo: {
     main: "/projects/bevioo/main.png",
+    mainSmall: "/projects/bevioo/main-small.png",
     collage: "/projects/bevioo/collage.png",
+    collageSmall: "/projects/bevioo/collage-small.png",
     logo: "/projects/bevioo/logo.png",
     small: [
       "/projects/bevioo/bevioo1-small.png",
@@ -240,7 +261,9 @@ export const projectImages: Record<
   },
   dsf: {
     main: "/projects/dsf/dsf1.png", //TO DO
+    mainSmall: "/projects/dsf/dsf1-small.png", //TO DO
     collage: "/projects/dsf/dsf4.png",
+    collageSmall: "/projects/dsf/dsf4-small.png",
     logo: "/projects/dsf/logo.png",
     small: [
       "/projects/dsf/dsf1-small.png",
@@ -266,5 +289,3 @@ export const projectImages: Record<
     ],
   },
 };
-
-export const profileImg = "/profileImg.png";

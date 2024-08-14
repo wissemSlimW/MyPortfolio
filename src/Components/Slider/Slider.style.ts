@@ -102,6 +102,11 @@ export const useSliderStyles = createUseStyles((theme: AppTheme) => ({
     position: "relative",
     borderRadius: 20,
   },
+  imgContainer: {
+    height: "100%",
+    borderRadius: 20,
+    overflow:'hidden'
+  },
   thumbImg: {
     width: "100%",
     height: "100%",

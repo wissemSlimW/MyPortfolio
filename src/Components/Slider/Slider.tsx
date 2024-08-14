@@ -50,7 +50,7 @@ export const Slider = (props: SliderProps) => {
     <div className={joinStyleClasses(classes.container, animationClass)}>
       <div className={classes.list}>
         {list.map((item, index) => (
-          <Item item={item} showAnimation={!index} />
+          <>{index < 2 && <Item item={item} showAnimation={!index} />}</>
         ))}
       </div>
       <div className={classes.thumbnails}>
@@ -85,16 +85,14 @@ export const Slider = (props: SliderProps) => {
 const Item = (props: { item: Project; showAnimation: boolean }) => {
   const theme = useTheme<AppTheme>();
   const classes = useSliderStyles({ theme });
-  const { onScreen, ref } = useOnScreen();
   const navigate = useNavigate();
   return (
     <div
       key={props.item.id}
       className={joinStyleClasses(
         classes.item,
-        onScreen && props.showAnimation ? classes.itemAnimation : ""
+        props.showAnimation ? classes.itemAnimation : ""
       )}
-      ref={ref}
     >
       <img
         className={classes.itemImg}
