@@ -1,10 +1,9 @@
+import { useCallback, useLayoutEffect, useState } from "react";
 import { useTheme } from "react-jss";
+import { useNavigate } from "react-router";
+import { joinStyleClasses, rotateArrayLeft } from "../../Utils";
 import { useSliderStyles } from "./Slider.style";
 import { SliderProps } from "./type";
-import { joinStyleClasses, rotateArrayLeft } from "../../Utils";
-import { useCallback, useLayoutEffect, useState } from "react";
-import { useOnScreen } from "../../Hooks";
-import { useNavigate } from "react-router";
 
 export const Slider = (props: SliderProps) => {
   const theme = useTheme<AppTheme>();

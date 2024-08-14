@@ -1,11 +1,10 @@
 import { Grid } from "@mui/material";
 import { useState } from "react";
-import { useSliderCarouselStyles } from "./SliderCarouseul.style";
 import { useTheme } from "react-jss";
-import { joinStyleClasses } from "../../Utils";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
+import { useSliderCarouselStyles } from "./SliderCarouseul.style";
 
 export const SliderCarousel = ({
   cards,
@@ -61,7 +60,7 @@ export const SliderCarousel = ({
           <div key={key} className={classes.imgContainer}>
             <div className={classes.imgSkeleton}>
               <div
-                // className={!!loaded?.[key] ? "" : classes.loadingImgAnimation}
+                className={!!loaded?.[key] ? "" : classes.loadingImgAnimation}
                 style={{
                   backgroundImage: !!loaded?.[key]
                     ? ""
@@ -74,7 +73,7 @@ export const SliderCarousel = ({
                   alt="project image"
                   style={{ visibility: !!loaded?.[key] ? "visible" : "hidden" }}
                   loading="lazy"
-                  onLoad={() => {}}
+                  onLoad={() => {setLoaded((prev) => ({ ...prev, [key]: true }))}}
                 />
               </div>
             </div>
