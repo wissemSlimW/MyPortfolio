@@ -14,3 +14,5 @@ export { PaintBoard } from "./PaintBoard";
 export { PaintBoardFull } from "./PaintBoardFull";
 export { Person } from "./Person";
 export { Send } from "./Send";
+export { ArrowCircleLeft } from "./ArrowCircleLeft";
+export { ArrowCircleRight } from "./ArrowCircleRight";

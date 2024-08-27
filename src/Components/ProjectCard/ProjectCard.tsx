@@ -45,7 +45,14 @@ export const ProjectCard = ({
               classes.thumbContent,
               loaded ? "" : classes.loadingImgAnimation
             )}
-            style={{ backgroundImage: loaded ? "" : `url(${card.mainSmall})` }}
+            style={
+              loaded
+                ? {}
+                : {
+                    filter: "blur(20px)",
+                    backgroundImage: `url(${card.mainSmall})`,
+                  }
+            }
           >
             <Grid
               component="img"
@@ -71,9 +78,14 @@ export const ProjectCard = ({
                   classes.backThumbImgContainer,
                   loaded ? "" : classes.loadingImgAnimation
                 )}
-                style={{
-                  backgroundImage: loaded ? "" : `url(${card.mainSmall})`,
-                }}
+                style={
+                  loaded
+                    ? {}
+                    : {
+                        filter: "blur(20px)",
+                        backgroundImage: `url(${card.mainSmall})`,
+                      }
+                }
               >
                 <Grid
                   component="img"

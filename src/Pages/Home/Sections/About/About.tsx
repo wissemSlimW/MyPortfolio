@@ -104,12 +104,15 @@ export const About = () => {
               <Grid component="span" className={classes.imgBgEnd}></Grid>
               <Hexagon borderColor={theme.colorLight} />
               <Grid
-              className={classes.imageloadingContainer}
-                style={{
-                  backgroundImage: loaded
-                    ? ""
-                    : `url(${imgProfileSquareSmall})`,
-                }}
+                className={classes.imageloadingContainer}
+                style={
+                  loaded
+                    ? {}
+                    : {
+                        filter: "blur(5px)",
+                        backgroundImage: `url(${imgProfileSquareSmall})`,
+                      }
+                }
               >
                 <Grid
                   className={classes.image}

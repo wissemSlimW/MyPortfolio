@@ -59,9 +59,14 @@ export const Main = () => {
             <Grid className={classes.imageContainer}>
               <Grid
                 className={classes.loadingImg}
-                style={{
-                  backgroundImage: loaded ? "" : `url(${profileImgSmall})`,
-                }}
+                style={
+                  loaded
+                    ? {}
+                    : {
+                        filter: "blur(20px)",
+                        backgroundImage: `url(${profileImgSmall})`,
+                      }
+                }
               >
                 <Grid
                   component={"img"}

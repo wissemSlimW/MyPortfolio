@@ -137,11 +137,16 @@ export const Projects = () => {
                 classes.showCaseImgWrapper,
                 loaded.img1 ? "" : classes.loadingImgAnimation
               )}
-              style={{
-                backgroundImage: loaded.img1
-                  ? ""
-                  : `url(${projectImages[id as ProjectNames].small[0]})`,
-              }}
+              style={
+                loaded.img1
+                  ? {}
+                  : {
+                      filter: "blur(20px)",
+                      backgroundImage: `url(${
+                        projectImages[id as ProjectNames].small[0]
+                      })`,
+                    }
+              }
             >
               <motion.img
                 {...fadeX({ delay: 0.5, distance: 100 })}
@@ -184,11 +189,16 @@ export const Projects = () => {
                 classes.showCaseImgWrapper,
                 loaded.img2 ? "" : classes.loadingImgAnimation
               )}
-              style={{
-                backgroundImage: loaded.img2
-                  ? ""
-                  : `url(${projectImages[id as ProjectNames].collageSmall})`,
-              }}
+              style={
+                loaded.img2
+                  ? {}
+                  : {
+                      filter: "blur(20px)",
+                      backgroundImage: `url(${
+                        projectImages[id as ProjectNames].collageSmall
+                      })`,
+                    }
+              }
             >
               <motion.img
                 initial={{ opacity: 0, scale: 0.7 }}
