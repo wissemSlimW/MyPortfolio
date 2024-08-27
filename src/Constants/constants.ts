@@ -9,4 +9,4 @@ export const emailData = {
     TEMPLATE_ID: 'template_h8c3pwo',
     PUBLIC_KEY: 'WLLchEtov0gfiAxOv',
 }
-export const resumeLink = '/slimwissemresume.pdf'
+export const resumeLink = '/WISSEM SLIM RESUME 2024.pdf'

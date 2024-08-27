@@ -26,6 +26,7 @@ export const useSliderCarouselStyles = createUseStyles((theme: AppTheme) => ({
 
   imgContainer: { padding: 10 },
   imgSkeleton: {
+    cursor: "pointer",
     padding: 20,
     marginInline: 20,
     borderRadius: 25,
@@ -42,7 +43,7 @@ export const useSliderCarouselStyles = createUseStyles((theme: AppTheme) => ({
     insetInlineEnd: 20,
     insetBlockStart: "50%",
     color: "white",
-    background: "#33333340",
+    background: "#33333360",
     padding: 10,
     borderRadius: "50%",
     cursor: "pointer",
@@ -55,7 +56,7 @@ export const useSliderCarouselStyles = createUseStyles((theme: AppTheme) => ({
     insetInlineStart: 20,
     insetBlockStart: "50%",
     color: "white",
-    background: "#33333340",
+    background: "#33333360",
     padding: 10,
     borderRadius: "50%",
     cursor: "pointer",
