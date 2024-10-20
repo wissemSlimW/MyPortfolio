@@ -1,4 +1,4 @@
-import { useCallback, useLayoutEffect, useState } from "react";
+import { Fragment, useCallback, useLayoutEffect, useState } from "react";
 import { useTheme } from "react-jss";
 import { useNavigate } from "react-router";
 import { joinStyleClasses, rotateArrayLeft } from "../../Utils";
@@ -10,7 +10,7 @@ export const Slider = (props: SliderProps) => {
   const classes = useSliderStyles({ theme });
   const [animationClass, setAnimationClass] = useState("");
   const [list, setList] = useState(props.list);
-  const timeRunning = 3000;
+  const timeRunning = 1000;
   const timeAutoNext = 7000;
   let timeout: number;
   let autoRun: number;
@@ -18,6 +18,7 @@ export const Slider = (props: SliderProps) => {
     clearTimeout(timeout);
     clearTimeout(autoRun);
     setList((prev) => rotateArrayLeft(prev, prev.length - 1));
+    console.log(list.map((l) => l.title));
     setAnimationClass(classes.prev);
     setTimeout(() => setAnimationClass(""), timeRunning);
     autoRun = setTimeout(() => {
@@ -49,7 +50,9 @@ export const Slider = (props: SliderProps) => {
     <div className={joinStyleClasses(classes.container, animationClass)}>
       <div className={classes.list}>
         {list.map((item, index) => (
-          <>{index < 2 && <Item item={item} showAnimation={!index} />}</>
+          <Fragment key={index}>
+            {<Item item={item} showAnimation={!index} />}
+          </Fragment>
         ))}
       </div>
       <div className={classes.thumbnails}>

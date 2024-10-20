@@ -32,6 +32,7 @@ export const useSliderStyles = createUseStyles((theme: AppTheme) => ({
     width: "100%",
     height: "100%",
     objectFit: "cover",
+    boxShadow: "0px 0px 20px 20px  #ffffff40",
   },
   content: {
     position: "absolute",
@@ -105,7 +106,7 @@ export const useSliderStyles = createUseStyles((theme: AppTheme) => ({
   imgContainer: {
     height: "100%",
     borderRadius: 20,
-    overflow:'hidden'
+    overflow: "hidden",
   },
   thumbImg: {
     width: "100%",
@@ -180,7 +181,7 @@ export const useSliderStyles = createUseStyles((theme: AppTheme) => ({
   },
   next: {
     "& $time ": {
-      animation: "$runningTime 3s linear 1 forwards",
+      animation: "$runningTime 1s linear 1 forwards",
     },
     "& $arrows> $arrowBtn": { pointerEvents: "none" },
     "& $list": {
@@ -192,12 +193,12 @@ export const useSliderStyles = createUseStyles((theme: AppTheme) => ({
           bottom: 50,
           insetInlineStart: "60%",
           borderRadius: 30,
-          animation: "$showImage .5s linear 1 forwards",
+          animation: "$showImage 0.5s linear 1 forwards",
         },
       },
     },
     "&> $thumbnails": {
-      animation: "$effectNext .5s linear 1 forwards",
+      animation: "$effectNext 0.5s linear 1 forwards",
       "&>:last-child": {
         overflow: "hidden",
         animation: "$showThumbnail .5s linear 1 forwards",
@@ -207,7 +208,7 @@ export const useSliderStyles = createUseStyles((theme: AppTheme) => ({
 
   prev: {
     "& $time ": {
-      animation: "$runningTime 3s linear 1 forwards",
+      animation: "$runningTime 1s linear 1 forwards",
     },
     "& $arrows> $arrowBtn": { pointerEvents: "none" },
     "& $list ": {
@@ -215,13 +216,13 @@ export const useSliderStyles = createUseStyles((theme: AppTheme) => ({
       "&>:nth-child(2)": {
         zIndex: 2,
         "&> $itemImg": {
-          animation: "$outFrame 0.5s linear 1 forwards",
+          animation: "$outFrame 0.6s linear 1 forwards",
           position: "absolute",
           bottom: 0,
           insetInlineStart: 0,
         },
         "& $title, $description, $btns": {
-          animation: "$contentOut 1.5s linear 1 forwards !important",
+          animation: "$contentOut 0.5s linear 1 forwards !important",
         },
       },
 
@@ -235,7 +236,7 @@ export const useSliderStyles = createUseStyles((theme: AppTheme) => ({
       "&>:first-child": {
         display: "hidden",
         opacity: 0,
-        animation: "$showThumbnail .5s linear 1 forwards",
+        animation: "$showThumbnail 0.6s linear  1 forwards",
       },
     },
   },
@@ -281,6 +282,7 @@ export const useSliderStyles = createUseStyles((theme: AppTheme) => ({
       bottom: 130,
       insetInlineStart: "60%",
       borderRadius: 20,
+      boxShadow: `2px 2px 7px #24282569`,
     },
   },
   "@keyframes contentOut": {
