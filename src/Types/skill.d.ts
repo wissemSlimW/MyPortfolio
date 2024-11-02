@@ -22,4 +22,15 @@ type SkillName =
   | "git"
   | "jira"
   | "redux"
-  | "meteor";
+  | "meteor"
+  | "monorepo"
+  | "angular"
+  | "svelte"
+  | "agile"
+  | "github"
+  | "nestJs"
+  | "turborepo"
+  | "html"
+  | "framerMotion"
+  | "css"
+  | "storybook";
