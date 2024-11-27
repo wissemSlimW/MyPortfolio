@@ -55,6 +55,7 @@ export const useAboutStyle = createUseStyles((theme: AppTheme) => ({
   content: {
     display: "flex",
     flexDirection: "column",
+    paddingBlockEnd: 10,
   },
   infoblock: {
     borderRadius: 20,
